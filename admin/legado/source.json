@@ -1,41 +1,46 @@
 [
   {
-    "bookSourceName": "八叉书库(8xsk.info)-CSS",
     "bookSourceType": 0,
-    "bookSourceUrl": "https://www.8xsk.info",
-    "customOrder": 0,
     "enabled": true,
-    "enabledCookieJar": true,
     "enabledExplore": true,
-    "exploreUrl": "[\n{\"title\":\"最近更新\",\"url\":\"/latest/index{{page - 1 == 0 ? '' : '_'+page}}.html\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":0.25}},\n{\"title\":\"最新入库\",\"url\":\"/release/index{{page - 1 == 0 ? '' : '_'+page}}.html\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":0.25}},\n{\"title\":\"热门排行\",\"url\":\"/popular/index{{page - 1 == 0 ? '' : '_'+page}}.html\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":0.25}},\n{\"title\":\"完本小说\",\"url\":\"/completed/index{{page - 1 == 0 ? '' : '_'+page}}.html\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":0.25}},\n{\"title\":\"长篇\",\"url\":\"/booklist1/{{page-1}}.html\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":0.25}},\n{\"title\":\"综合\",\"url\":\"/booklist2/{{page-1}}.html\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":0.25}},\n{\"title\":\"武侠\",\"url\":\"/booklist3/{{page-1}}.html\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":0.25}},\n{\"title\":\"历史\",\"url\":\"/booklist4/{{page-1}}.html\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":0.25}},\n{\"title\":\"都市\",\"url\":\"/booklist5/{{page-1}}.html\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":0.25}},\n{\"title\":\"玄幻\",\"url\":\"/booklist6/{{page-1}}.html\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":0.25}},\n{\"title\":\"女生\",\"url\":\"/booklist7/{{page-1}}.html\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":0.25}},\n{\"title\":\"其他\",\"url\":\"/booklist8/{{page-1}}.html\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":0.25}},\n{\"title\":\"现代\",\"url\":\"/booklist9/{{page-1}}.html\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":0.25}}\n]",
+    "enabledCookieJar": true,
+    "customOrder": 0,
+    "weight": 0,
+    "bookSourceUrl": "https://www.8xsk.info",
+    "bookSourceName": "八叉书库",
+    "bookSourceGroup": "@小说",
     "header": "{\n  \"User-Agent\": \"Mozilla/5.0 (Linux; Android 10; Mobile) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Mobile Safari/537.36\",\n  \"Referer\": \"https://www.8xsk.info/\"\n}",
-    "lastUpdateTime": 1755252000000,
-    "respondTime": 180000,
+    "searchUrl": "https://www.8xsk.info/e/search/index.php?keyboard={{key}}&show=title%2Cwriter%2Cbyr&searchget=1&page={{page}}",
+    "ruleSearch": {
+      "name": "h3[itemprop=name]@text",
+      "author": ".chuyen-muc",
+      "bookList": ".one-row > .home-truyendecu",
+      "bookUrl": ".each_truyen > a@href",
+      "coverUrl": ".each_truyen img@src",
+      "lastChapter": ".tt-status > a",
+      "wordCount": ".luot-xem"
+    },
+    "exploreUrl": "[\n{\"title\":\"最近更新\",\"url\":\"/latest/index{{page - 1 == 0 ? '' : '_'+page}}.html\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":0.25}},\n{\"title\":\"最新入库\",\"url\":\"/release/index{{page - 1 == 0 ? '' : '_'+page}}.html\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":0.25}},\n{\"title\":\"热门排行\",\"url\":\"/popular/index{{page - 1 == 0 ? '' : '_'+page}}.html\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":0.25}},\n{\"title\":\"完本小说\",\"url\":\"/completed/index{{page - 1 == 0 ? '' : '_'+page}}.html\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":0.25}},\n{\"title\":\"长篇\",\"url\":\"/booklist1/{{page-1}}.html\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":0.25}},\n{\"title\":\"综合\",\"url\":\"/booklist2/{{page-1}}.html\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":0.25}},\n{\"title\":\"武侠\",\"url\":\"/booklist3/{{page-1}}.html\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":0.25}},\n{\"title\":\"历史\",\"url\":\"/booklist4/{{page-1}}.html\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":0.25}},\n{\"title\":\"都市\",\"url\":\"/booklist5/{{page-1}}.html\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":0.25}},\n{\"title\":\"玄幻\",\"url\":\"/booklist6/{{page-1}}.html\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":0.25}},\n{\"title\":\"女生\",\"url\":\"/booklist7/{{page-1}}.html\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":0.25}},\n{\"title\":\"其他\",\"url\":\"/booklist8/{{page-1}}.html\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":0.25}},\n{\"title\":\"现代\",\"url\":\"/booklist9/{{page-1}}.html\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":0.25}}\n]",
+    "ruleExplore": {},
     "ruleBookInfo": {
-      "name": "h3@text || .desc h3@text || h1@text",
-      "author": ".info-chitiet a@text || .info-chitiet span a@text",
-      "coverUrl": ".book img@src || img.cover@src || .book img@data-src",
-      "intro": "[itemprop=description]@text || .desc p@text || .intro@text",
-      "kind": ".info-chitiet a[itemprop=genre]@text || .info-chitiet a@text",
-      "tocUrl": ""
+      "name": ".title",
+      "author": "a[itemprop=\"author\"]",
+      "coverUrl": "img[itemprop=\"image\"]@src",
+      "intro": ".desc-text[itemprop=description]@text",
+      "kind": ".info-chitiet span",
+      "lastChapter": "#new-chapter .chapter-text",
+      "wordCount": ".info .info-chitiet:nth-child(4)"
+    },
+    "ruleToc": {
+      "chapterList": "#list-chapter ul.list-chapter li",
+      "chapterName": ".chapter-text",
+      "chapterUrl": "a@href",
+      "nextTocUrl": ".pagination li:nth-last-child(2) a@href"
     },
     "ruleContent": {
       "content": "@js:\nvar regex = /\\{\\s*\"url\"\\s*:\\s*\"[^\"]+\"\\s*,\\s*\"mobile\"\\s*:\\s*\"[^\"]+\"\\s*,\\s*\"isk\"\\s*:\\s*\"[^\"]+\"\\s*\\}/;\nvar match = result.match(regex);\nif (!match) return \"正文提取失败，请检查页面结构\";\nvar jsonObj = JSON.parse(match[0]);\nvar params = \"url=\" + encodeURIComponent(jsonObj.url) + \n             \"&mobile=\" + encodeURIComponent(jsonObj.mobile) + \n             \"&isk=\" + encodeURIComponent(jsonObj.isk);\nlet response = java.post(\"https://www.8xsk.info/conapi.php\", params, {\n    \"Content-Type\": \"application/x-www-form-urlencoded; charset=UTF-8\",\n    \"X-Requested-With\": \"XMLHttpRequest\",\n    \"Origin\": \"https://www.8xsk.info\",\n    \"Referer\": baseUrl,\n    \"User-Agent\": \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36\"\n});\nJSON.parse(response.body())[\"content\"] || \"\";"
     },
-    "ruleSearch": {
-      "bookList": ".home-truyendecu, .col-md-3.col-sm-6, .each_truyen, .one-row > div",
-      "name": "h3[itemprop=name]@text || h3@text || a@title || a@text",
-      "bookUrl": "a@href",
-      "coverUrl": "img@src || img@data-src",
-      "author": ".author@text || span@text"
-    },
-    "ruleToc": {
-      "chapterList": "#list-chapter .list-chapter li a, .list-chapter li a, #list-chapter a",
-      "chapterName": ".chapter-text@text || text",
-      "chapterUrl": "@js:\nvar href = result.select(\"a\").attr(\"href\") || result.attr(\"href\");\nif (!href) return \"\";\nif (href.startsWith(\"http\")) return href;\nreturn \"https://www.8xsk.info\" + (href.startsWith(\"/\") ? href : \"/\" + href);",
-      "nextTocUrl": "#pagination li:nth-last-child(2) a@href || a:contains(下一页)@href"
-    },
-    "searchUrl": "https://www.8xsk.info/e/search/index.php?keyboard={{key}}&show=title%2Cwriter%2Cbyr&searchget=1&page={{page}}",
-    "weight": 0
+    "lastUpdateTime": 1786808143627,
+    "respondTime": 180000
   }
 ]
