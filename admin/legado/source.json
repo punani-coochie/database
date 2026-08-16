@@ -13,34 +13,34 @@
     "searchUrl": "https://www.8xsk.info/e/search/index.php?keyboard={{key}}&show=title%2Cwriter%2Cbyr&searchget=1&page={{page}}",
     "ruleSearch": {
       "name": "h3[itemprop=name]@text",
-      "author": ".chuyen-muc",
+      "author": ".chuyen-muc@text",
       "bookList": ".one-row > .home-truyendecu",
       "bookUrl": ".each_truyen > a@href",
       "coverUrl": ".each_truyen img@src",
-      "lastChapter": ".tt-status > a",
-      "wordCount": ".luot-xem"
+      "lastChapter": ".tt-status > a@text",
+      "wordCount": ".luot-xem@text"
     },
     "exploreUrl": "[\n{\"title\":\"最近更新\",\"url\":\"/latest/index{{page - 1 == 0 ? '' : '_'+page}}.html\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":0.25}},\n{\"title\":\"最新入库\",\"url\":\"/release/index{{page - 1 == 0 ? '' : '_'+page}}.html\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":0.25}},\n{\"title\":\"热门排行\",\"url\":\"/popular/index{{page - 1 == 0 ? '' : '_'+page}}.html\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":0.25}},\n{\"title\":\"完本小说\",\"url\":\"/completed/index{{page - 1 == 0 ? '' : '_'+page}}.html\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":0.25}},\n{\"title\":\"长篇\",\"url\":\"/booklist1/{{page-1}}.html\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":0.25}},\n{\"title\":\"综合\",\"url\":\"/booklist2/{{page-1}}.html\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":0.25}},\n{\"title\":\"武侠\",\"url\":\"/booklist3/{{page-1}}.html\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":0.25}},\n{\"title\":\"历史\",\"url\":\"/booklist4/{{page-1}}.html\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":0.25}},\n{\"title\":\"都市\",\"url\":\"/booklist5/{{page-1}}.html\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":0.25}},\n{\"title\":\"玄幻\",\"url\":\"/booklist6/{{page-1}}.html\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":0.25}},\n{\"title\":\"女生\",\"url\":\"/booklist7/{{page-1}}.html\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":0.25}},\n{\"title\":\"其他\",\"url\":\"/booklist8/{{page-1}}.html\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":0.25}},\n{\"title\":\"现代\",\"url\":\"/booklist9/{{page-1}}.html\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":0.25}}\n]",
     "ruleExplore": {},
     "ruleBookInfo": {
       "name": ".title",
-      "author": "a[itemprop=\"author\"]",
+      "author": "a[itemprop=\"author\"]@text",
       "coverUrl": "img[itemprop=\"image\"]@src",
       "intro": ".desc-text[itemprop=description]@text",
-      "kind": ".info-chitiet span",
-      "lastChapter": "#new-chapter .chapter-text",
+      "kind": ".info-chitiet a[itemprop=\"genre\"]",
+      "lastChapter": "#new-chapter ul.list-chapter li:first-child .chapter-text@text",
       "wordCount": ".info .info-chitiet:nth-child(4)"
     },
     "ruleToc": {
       "chapterList": "#list-chapter ul.list-chapter li",
-      "chapterName": ".chapter-text",
+      "chapterName": ".chapter-text@text",
       "chapterUrl": "a@href",
       "nextTocUrl": ".pagination li:nth-last-child(2) a@href"
     },
     "ruleContent": {
-      "content": "@js:\nvar regex = /\\{\\s*\"url\"\\s*:\\s*\"[^\"]+\"\\s*,\\s*\"mobile\"\\s*:\\s*\"[^\"]+\"\\s*,\\s*\"isk\"\\s*:\\s*\"[^\"]+\"\\s*\\}/;\nvar match = result.match(regex);\nif (!match) return \"正文提取失败，请检查页面结构\";\nvar jsonObj = JSON.parse(match[0]);\nvar params = \"url=\" + encodeURIComponent(jsonObj.url) + \n             \"&mobile=\" + encodeURIComponent(jsonObj.mobile) + \n             \"&isk=\" + encodeURIComponent(jsonObj.isk);\nlet response = java.post(\"https://www.8xsk.info/conapi.php\", params, {\n    \"Content-Type\": \"application/x-www-form-urlencoded; charset=UTF-8\",\n    \"X-Requested-With\": \"XMLHttpRequest\",\n    \"Origin\": \"https://www.8xsk.info\",\n    \"Referer\": baseUrl,\n    \"User-Agent\": \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36\"\n});\nJSON.parse(response.body())[\"content\"] || \"\";"
+      "content": "@js:\nvar regex = /\\{\"url\"\\s*:\\s*\"[^\"]+\"\\s*,\\s*\"mobile\"\\s*:\\s*\"\\d\"\\s*,\\s*\"isk\"\\s*:\\s*\"\\d\"\\s*,\\s*\"novel\"\\s*:\\s*\"\\d+\"\\s*,\\s*\"chapter\"\\s*:\\s*\"\\d+\"\\}/;\nvar match = result.match(regex);\nif (match) {\n    try {\n        var jsonObj = JSON.parse(match[0]); \n        // 拼接全部参数（含 novel、chapter）\n        var params = \"url=\" + encodeURIComponent(jsonObj.url) + \n                     \"&mobile=\" + encodeURIComponent(jsonObj.mobile) + \n                     \"&isk=\" + encodeURIComponent(jsonObj.isk) +\n                     \"&novel=\" + encodeURIComponent(jsonObj.novel) +\n                     \"&chapter=\" + encodeURIComponent(jsonObj.chapter);\n        java.log(params);\n\n        let response = java.post(\"https://bcshuku.com/conapi.php\", params, {\n            'User-Agent': 'Mozilla/5.0 (Linux; U; Android 10; zh-CN; MI 9 Build/QKQ1.190828.002) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/100.0.4896.58 Quark/10.5.1.1026 Mobile Safari/537.36',\n    'Accept': 'application/json, text/javascript, */*; q=0.01',\n    'x-requested-with': 'XMLHttpRequest',\n    'content-type': 'application/x-www-form-urlencoded; charset=UTF-8',\n    'origin': 'https://www.bcshuku.com',\n    'sec-fetch-site': 'same-origin',\n    'sec-fetch-mode': 'cors',\n    'sec-fetch-dest': 'empty',\n    'accept-language': 'zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7',\n    'referer': baseUrl,\n            });\n        if (response && response.body()) {\n            var content = JSON.parse(response.body())[\"content\"];\n            java.log(content);\n        } else {\n            java.log(\"响应体为空\");\n        }\n    } catch (e) {\n        java.log(\"运行异常: \" + e.message);\n    }\n} else {\n    java.log(\"未匹配到目标 JSON 字符串\");\n}\n"
     },
-    "lastUpdateTime": 1786808143627,
+    "lastUpdateTime": 1786863645271,
     "respondTime": 180000
   }
 ]
