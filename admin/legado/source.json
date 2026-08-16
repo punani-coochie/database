@@ -1,5 +1,54 @@
 [
   {
+    "bookSourceType": 2,
+    "enabled": true,
+    "enabledExplore": true,
+    "enabledCookieJar": true,
+    "customOrder": 0,
+    "weight": 0,
+    "bookSourceUrl": "https://www.wnacg.com",
+    "bookSourceName": "绅士漫画(wnacg下拉)",
+    "bookSourceGroup": "@漫画",
+    "header": "{\"User-Agent\": \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36\"}",
+    "loginUrl": "https://www.wnacg.com/users-login.html",
+    "searchUrl": "/search/?q={{key}}&f=_all&s=create_time_DESC&syn=yes&p={{page}}",
+    "ruleSearch": {
+      "name": "tag.a@title",
+      "bookList": "class.cc@tag.li",
+      "bookUrl": "class.pic_box@tag.a@href",
+      "coverUrl": "tag.img@src",
+      "intro": "class.info_col@text"
+    },
+    "exploreUrl": "[{\"title\":\"更新\",\"url\":\"/albums-index-page-{{page}}.html\",\"style\":{\"layout_flexBasisPercent\":1,\"layout_flexGrow\":1}},\n{\"title\":\"全彩\",\"url\":\"/albums-index-page-{{page}}-tag-%E5%85%A8%E5%BD%A9.html\",\"style\":{\"layout_flexBasisPercent\":1,\"layout_flexGrow\":1}},\n{\"title\":\"无修正\",\"url\":\"/albums-index-page-{{page}}-tag-%E7%84%A1%E4%BF%AE%E6%AD%A3.html\",\"style\":{\"layout_flexBasisPercent\":1,\"layout_flexGrow\":1}},\n{\"title\":\"同人志\",\"url\":\"/albums-index-page-{{page}}-cate-5.html\",\"style\":{\"layout_flexBasisPercent\":1,\"layout_flexGrow\":1}},\n{\"title\":\"汉化\",\"url\":\"/albums-index-page-{{page}}-cate-1.html\",\"style\":{\"layout_flexBasisPercent\":0.4,\"layout_flexGrow\":1}},\n{\"title\":\"日语\",\"url\":\"/albums-index-page-{{page}}-cate-12.html\",\"style\":{\"layout_flexBasisPercent\":0.4,\"layout_flexGrow\":1}},\n{\"title\":\"英语\",\"url\":\"/albums-index-page-{{page}}-cate-16.html\",\"style\":{\"layout_flexBasisPercent\":0.4,\"layout_flexGrow\":1}},\n{\"title\":\"GG书籍\",\"url\":\"/albums-index-page-{{page}}-cate-2.html\",\"style\":{\"layout_flexBasisPercent\":0.4,\"layout_flexGrow\":1}},\n{\"title\":\"CosPlay\",\"url\":\"/albums-index-page-{{page}}-cate-3.html\",\"style\":{\"layout_flexBasisPercent\":1,\"layout_flexGrow\":1}},\n{\"title\":\"单行本\",\"url\":\"/albums-index-page-{{page}}-cate-6.html\",\"style\":{\"layout_flexBasisPercent\":1,\"layout_flexGrow\":1}},\n{\"title\":\"汉化\",\"url\":\"/albums-index-page-{{page}}-cate-9.html\",\"style\":{\"layout_flexBasisPercent\":0.4,\"layout_flexGrow\":1}},\n{\"title\":\"日语\",\"url\":\"/albums-index-page-{{page}}-cate-13.html\",\"style\":{\"layout_flexBasisPercent\":0.4,\"layout_flexGrow\":1}},\n{\"title\":\"英语\",\"url\":\"/albums-index-page-{{page}}-cate-17.html\",\"style\":{\"layout_flexBasisPercent\":0.4,\"layout_flexGrow\":1}},\n{\"title\":\"杂志&短篇\",\"url\":\"/albums-index-page-{{page}}-cate-7.html\",\"style\":{\"layout_flexBasisPercent\":1,\"layout_flexGrow\":1}},\n{\"title\":\"汉化\",\"url\":\"/albums-index-page-{{page}}-cate-10.html\",\"style\":{\"layout_flexBasisPercent\":0.4,\"layout_flexGrow\":1}},\n{\"title\":\"日语\",\"url\":\"/albums-index-page-{{page}}-cate-14.html\",\"style\":{\"layout_flexBasisPercent\":0.4,\"layout_flexGrow\":1}},\n{\"title\":\"韩漫\",\"url\":\"/albums-index-page-{{page}}-cate-19.html\",\"style\":{\"layout_flexBasisPercent\":1,\"layout_flexGrow\":1}},\n{\"title\":\"汉化\",\"url\":\"/albums-index-page-{{page}}-cate-20.html\",\"style\":{\"layout_flexBasisPercent\":0.4,\"layout_flexGrow\":1}},\n{\"title\":\"韩语\",\"url\":\"/albums-index-page-{{page}}-cate-21.html\",\"style\":{\"layout_flexBasisPercent\":0.4,\"layout_flexGrow\":1}}]",
+    "ruleExplore": {
+      "name": "class.title@text",
+      "bookList": "tag.ul@tag.li",
+      "bookUrl": "class.pic_box@tag.a@href",
+      "coverUrl": "class.pic_box@tag.a@tag.img@src",
+      "intro": "class.info@class.info_col@text"
+    },
+    "ruleBookInfo": {
+      "name": "class.asTBcell uwthumb@tag.img@alt",
+      "author": "class.asTBcell uwuinfo@tag.p.0@text",
+      "intro": "class.asTBcell uwconn@tag.p.0@text",
+      "kind": "class.asTBcell uwconn@tag.label.0@text##分類：",
+      "wordCount": "class.asTBcell uwconn@tag.label.1@text##頁數："
+    },
+    "ruleToc": {
+      "chapterList": "class.gallary_wrap@tag.li.0",
+      "chapterName": "@js:book.name+' 全本'",
+      "chapterUrl": "@js:baseUrl.replace('photos-index','photos-gallery')",
+      "nextTocUrl": "@js:''"
+    },
+    "ruleContent": {
+      "content": "@js:src.split('//img5.qy0.ru/').slice(1).map(p=>'//img5.qy0.ru/'+p.substring(0,p.indexOf('\\\\\"')).trim()).filter(u=>u.indexOf('cover.jpg')===-1).map(u=>'<img src=\"https:'+u+'\">').join('\\n')",
+      "nextContentUrl": "text.下一頁@href",
+      "imageStyle": "FULL"
+    },
+    "lastUpdateTime": 1786878925449,
+    "respondTime": 180000
+  },
+  {
     "bookSourceType": 0,
     "enabled": true,
     "enabledExplore": true,
@@ -27,7 +76,7 @@
       "author": "a[itemprop=\"author\"]@text",
       "coverUrl": "img[itemprop=\"image\"]@src",
       "intro": ".desc-text[itemprop=description]@text",
-      "kind": ".info-chitiet a[itemprop=\"genre\"]",
+      "kind": ".info-chitiet a[itemprop=\"genre\"]@text",
       "lastChapter": "#new-chapter ul.list-chapter li:first-child .chapter-text@text",
       "wordCount": ".info .info-chitiet:nth-child(4)"
     },
@@ -40,7 +89,48 @@
     "ruleContent": {
       "content": "@js:\nvar regex = /\\{\"url\"\\s*:\\s*\"[^\"]+\"\\s*,\\s*\"mobile\"\\s*:\\s*\"\\d\"\\s*,\\s*\"isk\"\\s*:\\s*\"\\d\"\\s*,\\s*\"novel\"\\s*:\\s*\"\\d+\"\\s*,\\s*\"chapter\"\\s*:\\s*\"\\d+\"\\}/;\nvar match = result.match(regex);\nif (match) {\n    try {\n        var jsonObj = JSON.parse(match[0]); \n        // 拼接全部参数（含 novel、chapter）\n        var params = \"url=\" + encodeURIComponent(jsonObj.url) + \n                     \"&mobile=\" + encodeURIComponent(jsonObj.mobile) + \n                     \"&isk=\" + encodeURIComponent(jsonObj.isk) +\n                     \"&novel=\" + encodeURIComponent(jsonObj.novel) +\n                     \"&chapter=\" + encodeURIComponent(jsonObj.chapter);\n        java.log(params);\n\n        let response = java.post(\"https://bcshuku.com/conapi.php\", params, {\n            'User-Agent': 'Mozilla/5.0 (Linux; U; Android 10; zh-CN; MI 9 Build/QKQ1.190828.002) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/100.0.4896.58 Quark/10.5.1.1026 Mobile Safari/537.36',\n    'Accept': 'application/json, text/javascript, */*; q=0.01',\n    'x-requested-with': 'XMLHttpRequest',\n    'content-type': 'application/x-www-form-urlencoded; charset=UTF-8',\n    'origin': 'https://www.bcshuku.com',\n    'sec-fetch-site': 'same-origin',\n    'sec-fetch-mode': 'cors',\n    'sec-fetch-dest': 'empty',\n    'accept-language': 'zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7',\n    'referer': baseUrl,\n            });\n        if (response && response.body()) {\n            var content = JSON.parse(response.body())[\"content\"];\n            java.log(content);\n        } else {\n            java.log(\"响应体为空\");\n        }\n    } catch (e) {\n        java.log(\"运行异常: \" + e.message);\n    }\n} else {\n    java.log(\"未匹配到目标 JSON 字符串\");\n}\n"
     },
-    "lastUpdateTime": 1786863645271,
+    "lastUpdateTime": 1786878550461,
     "respondTime": 180000
+  },
+  {
+    "bookSourceName": "绅士漫画网(agmhw)",
+    "bookSourceType": 2,
+    "bookSourceUrl": "https://www.agmhw.com",
+    "customOrder": 0,
+    "enabled": true,
+    "enabledCookieJar": true,
+    "enabledExplore": true,
+    "exploreUrl": "[\n{\"title\":\"今日更新\",\"url\":\"/new/\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":0.25}},\n{\"title\":\"排行\",\"url\":\"/top/\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":0.25}},\n{\"title\":\"韩漫\",\"url\":\"/manga1\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":0.25}},\n{\"title\":\"日漫\",\"url\":\"/manga2\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":0.25}},\n{\"title\":\"3D\",\"url\":\"/manga3\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":0.25}},\n{\"title\":\"同人\",\"url\":\"/manga4\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":0.25}},\n{\"title\":\"单本\",\"url\":\"/manga5\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":0.25}},\n{\"title\":\"短篇\",\"url\":\"/manga6\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":0.25}},\n{\"title\":\"CP\",\"url\":\"/manga7\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":0.25}},\n{\"title\":\"CG\",\"url\":\"/manga8\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":0.25}}\n]",
+    "header": "{\n  \"User-Agent\": \"Mozilla/5.0 (Linux; Android 10; Mobile) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Mobile Safari/537.36\",\n  \"Referer\": \"https://www.agmhw.com/\"\n}",
+    "lastUpdateTime": 1755340000000,
+    "respondTime": 180000,
+    "ruleBookInfo": {
+      "name": "h1@text",
+      "author": "a[href*=writer]@text || .box a[href*=search]@text",
+      "coverUrl": ".box img@src || img@src",
+      "intro": ".box p@text || [class*=intro]@text",
+      "kind": "a[href*=manga]@text",
+      "lastChapter": "a[href*=chapter]:contains(第)@text",
+      "tocUrl": ""
+    },
+    "ruleContent": {
+      "content": "img.comic_img@data-original || img.lazy@data-original || img.comic_img@src"
+    },
+    "ruleSearch": {
+      "bookList": ".box h3, .list-item, section .box, .col-md-3, .col-sm-6",
+      "name": "h3 a@text || h3@text || a@title || a@text",
+      "bookUrl": "h3 a@href || a@href",
+      "coverUrl": "img@src || img@data-src",
+      "author": "作者：*@text || .author@text",
+      "lastChapter": "最新*@text || a[href*=chapter]@text"
+    },
+    "ruleToc": {
+      "chapterList": ".box li a[href*=chapter], #chapterlist a, .list-chapter a, a[href*=chapter]",
+      "chapterName": "text",
+      "chapterUrl": "@href",
+      "nextTocUrl": "a:contains(下一页)@href || a:contains(下页)@href || .pagination a:contains(>)@href"
+    },
+    "searchUrl": "/e/search/index.php?keyboard={{key}}&show=title,writer,byr&searchget=1",
+    "weight": 0
   }
 ]
