@@ -37,10 +37,10 @@
       "nextTocUrl": "ul.pagination > li:nth-last-child(2)"
     },
     "ruleContent": {
-      "content": "@js:\nvar html = result;\nvar matches = html.match(/data-original=['\"](https?:\\/\\/[^'\"]+)['\"]/g) || [];\nvar list = [];\nfor (var i = 0; i < matches.length; i++) {\n  var src = matches[i].replace(/data-original=['\"]/i, \"\").replace(/['\"]$/, \"\");\n  if (src && list.indexOf(src) === -1) {\n    list.push(\"<img src=\\\"\" + src + \"\\\">\");\n  }\n}\nlist.join(\"\\n\");",
+      "content": "@js:\nvar doc = org.jsoup.Jsoup.parse(result);   // 先把字符串转成 Document\nvar imgs = doc.select(\"img.comic_img, img.lazy, img\");\nvar html = \"\";\nfor (var i = 0; i < imgs.size(); i++) {\n  var src = imgs.get(i).attr(\"data-original\") \n         || imgs.get(i).attr(\"data-src\") \n         || imgs.get(i).attr(\"src\");\n  if (src && src.indexOf(\"http\") === 0) {\n    html += \"<img src=\\\"\" + src + \"\\\">\\n\";\n  }\n}\nhtml;",
       "title": "h1"
     },
-    "lastUpdateTime": 1786890604888,
+    "lastUpdateTime": 1786890825462,
     "respondTime": 180000
   },
   {
