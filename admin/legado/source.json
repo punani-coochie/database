@@ -1,5 +1,101 @@
 [
   {
+    "bookSourceType": 0,
+    "enabled": true,
+    "enabledExplore": true,
+    "enabledCookieJar": true,
+    "customOrder": 14,
+    "weight": 0,
+    "bookSourceUrl": "https://www.18mh.net",
+    "bookSourceName": "18mh",
+    "bookSourceGroup": "@小说",
+    "header": "{\n\"User-Agent\":\"Mozilla/5.0 (Linux; Android 9) Mobile Safari/537.36\",\"referer\":\"{{baseUrl}}\",\n}",
+    "searchUrl": "/novel/all?key_word={{key}}&page={{page}}",
+    "ruleSearch": {
+      "name": ".dx-title@textNodes",
+      "author": ".underline.0@text",
+      "bookList": ".novel-card",
+      "bookUrl": "a.0@href",
+      "coverUrl": ".poster@img.0@src"
+    },
+    "exploreUrl": "全部小说::/novel/all?page={{page}}\n热门小说::/novel/common?type=hot&page={{page}}\n最新更新::/novel/common?type=newest&page={{page}}\n都市激情::/novel/all?theme=1&page={{page}}\n校园春色::/novel/all?theme=2&page={{page}}\n乡村爱情::/novel/all?theme=3&page={{page}}\n系统异能::/novel/all?theme=4&page={{page}}\n家庭乱伦::/novel/all?theme=5&page={{page}}\n穿越重生::/novel/all?theme=6&page={{page}}\n经典武侠::/novel/all?theme=7&page={{page}}\n同人改编::/novel/all?theme=8&page={{page}}\n科学幻想::/novel/all?theme=9&page={{page}}\n东方玄幻::/novel/all?theme=10&page={{page}}\n娱乐明星::/novel/all?theme=11&page={{page}}\n历史架空::/novel/all?theme=12&page={{page}}\n西方魔幻::/novel/all?theme=13&page={{page}}\n贤者小说::/novel/all?theme=14&page={{page}}",
+    "ruleExplore": {},
+    "ruleBookInfo": {
+      "name": ".dx-title h1@text",
+      "author": ".shortinfo.0@text",
+      "coverUrl": ".poster@img.0@src",
+      "intro": ".desc@text",
+      "kind": ".shortinfo.1@text",
+      "lastChapter": ".newestChapter@a@text"
+    },
+    "ruleToc": {
+      "chapterList": ".menu-list a",
+      "chapterName": "text",
+      "chapterUrl": "href"
+    },
+    "ruleContent": {
+      "content": ".article@html"
+    },
+    "lastUpdateTime": 1786931725354,
+    "respondTime": 180000
+  },
+  {
+    "bookSourceType": 0,
+    "enabled": true,
+    "enabledExplore": true,
+    "enabledCookieJar": true,
+    "customOrder": 0,
+    "weight": 0,
+    "bookSourceUrl": "https://www.alicesw.com",
+    "bookSourceName": "爱丽丝书屋",
+    "bookSourceGroup": "@小说",
+    "bookSourceComment": "2026-08-01 按 alicesw.com 当前 HTML 结构编写。未写入个人 Cookie；如站点改为强制登录，请在书源 header 中自行加入 Cookie。",
+    "header": "{\"User-Agent\":\"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120 Safari/537.36\",\"Accept-Language\":\"zh-CN,zh;q=0.9\"}",
+    "loginUrl": "https://www.alicesw.com/user/user/login.html",
+    "searchUrl": "https://www.alicesw.com/search.html?q={{java.encodeURI(key)}}&f=_all&p={{page}}",
+    "ruleSearch": {
+      "name": "@css:h5 a@text##^\\d+\\.\\s*##",
+      "author": "@css:p.mb-1 a@text",
+      "bookList": "@css:.list-group-item",
+      "bookUrl": "@css:h5 a@href",
+      "intro": "@css:.content-txt@text",
+      "kind": "@css:h5 small@text##[\\[\\]]##",
+      "wordCount": "@css:p.mb-1@text##.*字数：([^　\\s]+).*##$1"
+    },
+    "exploreUrl": "都市::https://www.alicesw.com/lists/64.html?page={{page}}\n玄幻::https://www.alicesw.com/lists/62.html?page={{page}}\n校园::https://www.alicesw.com/lists/61.html?page={{page}}\n乡村::https://www.alicesw.com/lists/63.html?page={{page}}\n乱伦::https://www.alicesw.com/lists/65.html?page={{page}}\n同人::https://www.alicesw.com/lists/73.html?page={{page}}\n武侠::https://www.alicesw.com/lists/68.html?page={{page}}\n系统::https://www.alicesw.com/lists/69.html?page={{page}}\n穿越::https://www.alicesw.com/lists/70.html?page={{page}}\n科幻::https://www.alicesw.com/lists/71.html?page={{page}}\n明星::https://www.alicesw.com/lists/72.html?page={{page}}\n奇幻::https://www.alicesw.com/lists/75.html?page={{page}}\n经典::https://www.alicesw.com/lists/79.html?page={{page}}\n反差::https://www.alicesw.com/lists/22.html?page={{page}}\n凌辱::https://www.alicesw.com/lists/46.html?page={{page}}\n堕落::https://www.alicesw.com/lists/18.html?page={{page}}\n纯爱::https://www.alicesw.com/lists/19.html?page={{page}}\n伪娘::https://www.alicesw.com/lists/52.html?page={{page}}\n萝莉::https://www.alicesw.com/lists/48.html?page={{page}}\n熟女::https://www.alicesw.com/lists/56.html?page={{page}}\n正太::https://www.alicesw.com/lists/50.html?page={{page}}\nNTR::https://www.alicesw.com/lists/54.html?page={{page}}\n媚黑::https://www.alicesw.com/lists/53.html?page={{page}}\n调教::https://www.alicesw.com/lists/58.html?page={{page}}\n言情::https://www.alicesw.com/lists/59.html?page={{page}}\n百合::https://www.alicesw.com/lists/47.html?page={{page}}\n耽美::https://www.alicesw.com/lists/82.html?page={{page}}\n重口::https://www.alicesw.com/lists/21.html?page={{page}}\n其他::https://www.alicesw.com/lists/57.html?page={{page}}",
+    "ruleExplore": {
+      "name": "@css:li.two a@text",
+      "author": "@css:li.four@text",
+      "bookList": "@css:.rec_rullist ul",
+      "bookUrl": "@css:li.two a@href",
+      "kind": "@css:li.sev a@text",
+      "lastChapter": "@css:li.three a@text",
+      "wordCount": "@css:li.five@text"
+    },
+    "ruleBookInfo": {
+      "name": "@css:.novel_title@text",
+      "author": "@css:.novel_info p:eq(0) a@text",
+      "tocUrl": "@css:.book_newchap .tit a@href",
+      "coverUrl": "@css:.pic img@src",
+      "intro": "@css:.jianjie p@text",
+      "kind": "@css:.novel_info p:eq(1) a@text&&@css:.tags_list a@text",
+      "lastChapter": "@css:.novel_info p:eq(5) a@text",
+      "wordCount": "@css:.novel_info p:eq(3)@text##.*字 数：([^·]+).*##$1"
+    },
+    "ruleToc": {
+      "chapterList": "@css:.mulu_list li",
+      "chapterName": "@css:a@text",
+      "chapterUrl": "@css:a@href"
+    },
+    "ruleContent": {
+      "content": "@css:.j_readContent p@text",
+      "title": "@css:.j_chapterName@text",
+      "nextContentUrl": "@css:#j_chapterNext@href"
+    },
+    "lastUpdateTime": 1786931718834,
+    "respondTime": 180000
+  },
+  {
     "bookSourceType": 2,
     "enabled": true,
     "enabledExplore": true,
@@ -135,61 +231,5 @@
     },
     "lastUpdateTime": 1786878550461,
     "respondTime": 180000
-  },
-  {
-    "bookSourceName": "爱丽丝书屋",
-    "bookSourceUrl": "https://www.alicesw.com",
-    "bookSourceType": 0,
-    "bookSourceGroup": "自制,小说",
-    "bookSourceComment": "2026-08-01 按 alicesw.com 当前 HTML 结构编写。未写入个人 Cookie；如站点改为强制登录，请在书源 header 中自行加入 Cookie。",
-    "enabled": true,
-    "enabledExplore": true,
-    "enabledCookieJar": true,
-    "header": "{\"User-Agent\":\"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120 Safari/537.36\",\"Accept-Language\":\"zh-CN,zh;q=0.9\"}",
-    "lastUpdateTime": "1785586186811",
-    "weight": 0,
-    "loginUrl": "https://www.alicesw.com/user/user/login.html",
-    "searchUrl": "https://www.alicesw.com/search.html?q={{java.encodeURI(key)}}&f=_all&p={{page}}",
-    "exploreUrl": "都市::https://www.alicesw.com/lists/64.html?page={{page}}\n玄幻::https://www.alicesw.com/lists/62.html?page={{page}}\n校园::https://www.alicesw.com/lists/61.html?page={{page}}\n乡村::https://www.alicesw.com/lists/63.html?page={{page}}\n乱伦::https://www.alicesw.com/lists/65.html?page={{page}}\n同人::https://www.alicesw.com/lists/73.html?page={{page}}\n武侠::https://www.alicesw.com/lists/68.html?page={{page}}\n系统::https://www.alicesw.com/lists/69.html?page={{page}}\n穿越::https://www.alicesw.com/lists/70.html?page={{page}}\n科幻::https://www.alicesw.com/lists/71.html?page={{page}}\n明星::https://www.alicesw.com/lists/72.html?page={{page}}\n奇幻::https://www.alicesw.com/lists/75.html?page={{page}}\n经典::https://www.alicesw.com/lists/79.html?page={{page}}\n反差::https://www.alicesw.com/lists/22.html?page={{page}}\n凌辱::https://www.alicesw.com/lists/46.html?page={{page}}\n堕落::https://www.alicesw.com/lists/18.html?page={{page}}\n纯爱::https://www.alicesw.com/lists/19.html?page={{page}}\n伪娘::https://www.alicesw.com/lists/52.html?page={{page}}\n萝莉::https://www.alicesw.com/lists/48.html?page={{page}}\n熟女::https://www.alicesw.com/lists/56.html?page={{page}}\n正太::https://www.alicesw.com/lists/50.html?page={{page}}\nNTR::https://www.alicesw.com/lists/54.html?page={{page}}\n媚黑::https://www.alicesw.com/lists/53.html?page={{page}}\n调教::https://www.alicesw.com/lists/58.html?page={{page}}\n言情::https://www.alicesw.com/lists/59.html?page={{page}}\n百合::https://www.alicesw.com/lists/47.html?page={{page}}\n耽美::https://www.alicesw.com/lists/82.html?page={{page}}\n重口::https://www.alicesw.com/lists/21.html?page={{page}}\n其他::https://www.alicesw.com/lists/57.html?page={{page}}",
-    "ruleSearch": {
-      "bookList": "@css:.list-group-item",
-      "name": "@css:h5 a@text##^\\d+\\.\\s*##",
-      "author": "@css:p.mb-1 a@text",
-      "kind": "@css:h5 small@text##[\\[\\]]##",
-      "wordCount": "@css:p.mb-1@text##.*字数：([^　\\s]+).*##$1",
-      "lastUpdateTime": "@css:p.timedesc@text##.*更新时间：(.+)$##$1",
-      "intro": "@css:.content-txt@text",
-      "bookUrl": "@css:h5 a@href"
-    },
-    "ruleExplore": {
-      "bookList": "@css:.rec_rullist ul",
-      "name": "@css:li.two a@text",
-      "author": "@css:li.four@text",
-      "kind": "@css:li.sev a@text",
-      "wordCount": "@css:li.five@text",
-      "lastChapter": "@css:li.three a@text",
-      "lastUpdateTime": "@css:li.six@text",
-      "bookUrl": "@css:li.two a@href"
-    },
-    "ruleBookInfo": {
-      "name": "@css:.novel_title@text",
-      "author": "@css:.novel_info p:eq(0) a@text",
-      "kind": "@css:.novel_info p:eq(1) a@text&&@css:.tags_list a@text",
-      "wordCount": "@css:.novel_info p:eq(3)@text##.*字 数：([^·]+).*##$1",
-      "lastChapter": "@css:.novel_info p:eq(5) a@text",
-      "coverUrl": "@css:.pic img@src",
-      "intro": "@css:.jianjie p@text",
-      "tocUrl": "@css:.book_newchap .tit a@href"
-    },
-    "ruleToc": {
-      "chapterList": "@css:.mulu_list li",
-      "chapterName": "@css:a@text",
-      "chapterUrl": "@css:a@href"
-    },
-    "ruleContent": {
-      "title": "@css:.j_chapterName@text",
-      "content": "@css:.j_readContent p@text",
-      "nextContentUrl": "@css:#j_chapterNext@href"
-    }
   }
 ]
