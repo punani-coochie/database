@@ -21,7 +21,7 @@
     "ruleExplore": {
       "name": "name",
       "author": "author",
-      "bookList": "@js:\nlet html = typeof result === \"string\" ? result : String(result);\ntry {\n  if (result && result.outerHtml) html = result.outerHtml();\n} catch (e) {}\n\nconst doc = org.jsoup.Jsoup.parse(html, baseUrl);\nconst list = [];\nconst kind = `长篇, ${doc.select(\".post-body\").first()?.text().trim() || \"\"}`;\nconst all = doc.select(\".post-body\").select(\"h3, a[href*='/search/label/']\");\nlet author = \"\";\n\nfor (let i = 0; i < all.size(); i++) {\n  const el = all.get(i);\n  const tagName = String(el.tagName() || \"\").toLowerCase();\n\n  if (tagName === \"h3\") {\n    author = (el.text() || \"\").trim();\n    continue;\n  }\n\n  const name = String(el.attr(\"title\") || el.text() || \"\")\n    .replace(/[《》]/g, \"\")\n    .trim();\n  const parentText = String(el.parent()?.text() || \"\").trim();\n  author = (String(parentText).match(/作者[：:]\\s*([^\\s\\n\\r，,。]+)/) || [])[1] || author\n\n  const bookUrl = String(el.attr(\"href\") || \"\");\n  if (bookUrl) continue;\n\n  if (bookUrl.indexOf(\"http\") !== 0) {\n    bookUrl = baseUrl + (bookUrl.charAt(0) === \"/\" ? bookUrl : \"/\" + bookUrl);\n  }\n\n  list.push({\n    name,\n    author,\n    bookUrl,\n    kind,\n  });\n}\n\nlist;\n",
+      "bookList": "@js:\nlet html = typeof result === \"string\" ? result : String(result);\ntry {\n  if (result && result.outerHtml) html = result.outerHtml();\n} catch (e) {}\n\nconst doc = org.jsoup.Jsoup.parse(html, baseUrl);\nconst list = [];\nconst kind = `长篇, ${doc.select(\".post-body\").first()?.text().trim() || \"\"}`;\nconst all = doc.select(\".post-body\").select(\"h3, a[href*='/search/label/']\");\nlet author = \"\";\n\nfor (let i = 0; i < all.size(); i++) {\n  const el = all.get(i);\n  const tagName = String(el.tagName() || \"\").toLowerCase();\n\n  if (tagName === \"h3\") {\n    author = (el.text() || \"\").trim();\n    continue;\n  }\n\n  const name = String(el.attr(\"title\") || el.text() || \"\")\n    .replace(/[《》]/g, \"\")\n    .trim();\n  const parentText = String(el.parent()?.text() || \"\").trim();\n  author = (String(parentText).match(/作者[：:]\\s*([^\\s\\n\\r，,。]+)/) || [])[1] || author\n\n  const bookUrl = String(el.attr(\"href\") || \"\");\n  if (!bookUrl) continue;\n\n  if (bookUrl.indexOf(\"http\") !== 0) {\n    bookUrl = baseUrl + (bookUrl.charAt(0) === \"/\" ? bookUrl : \"/\" + bookUrl);\n  }\n\n  list.push({\n    name,\n    author,\n    bookUrl,\n    kind,\n  });\n}\n\nlist;\n",
       "bookUrl": "bookUrl",
       "intro": "intro",
       "kind": "kind"
@@ -42,7 +42,7 @@
       "title": "h3.post-title.entry-title@text",
       "replaceRegex": "##目录:.*|##标签:.*|##Posted by.*|##Labels:.*"
     },
-    "lastUpdateTime": 1788020105929,
+    "lastUpdateTime": 1788020925254,
     "respondTime": 180000
   },
   {
