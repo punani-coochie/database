@@ -5,6 +5,41 @@
     "enabledExplore": true,
     "customOrder": 0,
     "weight": 0,
+    "bookSourceUrl": "http://www.h528.com",
+    "bookSourceName": "风月文学网",
+    "bookSourceGroup": "@小说",
+    "bookSourceComment": "自制，仅发现功能，无搜索功能(太菜了。)，需要vpn",
+    "bookUrlPattern": "http://www.h528.com/post/\\d*.html",
+    "searchUrl": "http://www.h528.com/page/1?s={{key}}",
+    "ruleSearch": {
+      "name": "a[rel=bookmark]@text",
+      "bookList": ".narrowcolumn > table > tbody > tr",
+      "bookUrl": "a[rel=bookmark]@href",
+      "kind": "a:not([rel=bookmark])@text"
+    },
+    "exploreUrl": "人妻熟女::/post/category/人妻熟女/page/{{page}}&&家庭乱伦::/post/category/家庭亂倫/page/{{page}}&&强暴虐待::/post/category/強暴虐待/page/{{page}}&&学生校园::/post/category/校園師生/page/{{page}}&&武侠科幻::/post/category/武俠科幻/page/{{page}}&&动漫改编::/post/category/動漫改編/page/{{page}}&&名人明星::/post/category/名人明星/page/{{page}}&&都市生活::/post/category/都市生活/page/{{page}}&&变身系列::/post/category/變身系列/page/{{page}}&&经验故事::/post/category/經驗故事/page/{{page}}&&另类其它::/post/category/另類其它/page/{{page}}&&性知识::/post/category/性知識/page/{{page}}",
+    "ruleExplore": {
+      "name": "tag.h3@tag.a@text",
+      "bookList": "class.post",
+      "bookUrl": "tag.h3@tag.a@href",
+      "kind": "tag.small@tag.a@text"
+    },
+    "ruleBookInfo": {
+      "name": ".post h2"
+    },
+    "ruleToc": {},
+    "ruleContent": {
+      "content": ".entry p@html"
+    },
+    "lastUpdateTime": 1787991178096,
+    "respondTime": 180000
+  },
+  {
+    "bookSourceType": 0,
+    "enabled": true,
+    "enabledExplore": true,
+    "customOrder": 0,
+    "weight": 0,
     "bookSourceUrl": "http://www.h528.com/",
     "bookSourceName": "风月文学网",
     "bookSourceGroup": "@小说",
