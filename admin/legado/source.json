@@ -32,15 +32,15 @@
       "kind": "长篇·成人"
     },
     "ruleToc": {
-      "chapterList": "h3 a[href*='xbookcn'], .post-title a[href*='xbookcn']",
-      "chapterName": "text",
-      "chapterUrl": "href"
+      "chapterList": "@js:\nlet url = baseUrl;\nlet list = [];\nlet isFirstPage = true;\n\nwhile (url) {\n    const pageHtml = java.ajax(url);\n    const doc = org.jsoup.Jsoup.parse(pageHtml)\n    let tocs = doc.select(\"h3.post-title.entry-title a\");\n    \n    if (isFirstPage) {\n        isFirstPage = false;\n        const firstToc = tocs.first();\n        if(firstToc.text().indexOf(\"内容简介\") === -1) {\n            tocs = tocs.not(firstToc);\n        }\n    }\n\n    list.push(...tocs);\n\n    // 获取下一页\n    const next = doc.select(\"a.blog-pager-older-link\").attr(\"href\");\n\n    if (!next) {\n        break;\n    }\n\n    // 防止跳到其他标签\n    if (next.indexOf(baseUrl) === -1) {\n        break;\n    }\n\n    url = next;\n}\n\n\n\nlist.join(\"\\n\");",
+      "chapterName": "@text",
+      "chapterUrl": "@href"
     },
     "ruleContent": {
       "content": ".post-body@html||.entry-content@html||article .post@html||#Blog1 .post-body@html",
       "replaceRegex": "##目录:.*|##标签:.*|##Posted by.*|##Labels:.*"
     },
-    "lastUpdateTime": 1788013720991,
+    "lastUpdateTime": 1788019745500,
     "respondTime": 180000
   },
   {
