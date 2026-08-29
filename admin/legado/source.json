@@ -12,7 +12,7 @@
     "searchUrl": "http://www.h528.com/page/1?s={{key}}",
     "ruleSearch": {
       "name": "a[rel=bookmark]@text",
-      "bookList": ".narrowcolumn > table > tbody > tr",
+      "bookList": ".narrowcolumn   table:has(table) > tbody > tr",
       "bookUrl": "a[rel=bookmark]@href",
       "kind": "a:not([rel=bookmark])@text"
     },
@@ -25,7 +25,7 @@
     "ruleContent": {
       "content": ".entry p@html"
     },
-    "lastUpdateTime": 1787993239642,
+    "lastUpdateTime": 1787993994426,
     "respondTime": 180000
   },
   {
