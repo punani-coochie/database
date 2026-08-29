@@ -27,7 +27,8 @@
       "kind": "kind"
     },
     "ruleBookInfo": {
-      "name": "h1@text##-长篇.*|\\s+",
+      "name": ".status-msg-body@text",
+      "author": ".post-outer:eq(0) .post-body > p:eq(0)@text##^\\s+|\\s+$##^作者[：:]\\s*",
       "intro": "h3:matches(内容简介) a@text||.post-body@text##(?s)^(.{0,200}).*##$1",
       "kind": "长篇·成人"
     },
@@ -37,10 +38,11 @@
       "chapterUrl": "@href"
     },
     "ruleContent": {
-      "content": ".post-body@html||.entry-content@html||article .post@html||#Blog1 .post-body@html",
+      "content": ".post-body@html",
+      "title": "h3.post-title.entry-title@text",
       "replaceRegex": "##目录:.*|##标签:.*|##Posted by.*|##Labels:.*"
     },
-    "lastUpdateTime": 1788019745500,
+    "lastUpdateTime": 1788020105929,
     "respondTime": 180000
   },
   {
