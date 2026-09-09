@@ -6,17 +6,58 @@
     "enabledCookieJar": true,
     "customOrder": 0,
     "weight": 0,
+    "bookSourceUrl": "https://hongxiuzhao.net/",
+    "bookSourceName": "红袖招",
+    "bookSourceGroup": "@小说",
+    "bookSourceComment": "需要点击登录过一下验证",
+    "loginUrl": "https://hongxiuzhao.net/",
+    "searchUrl": "https://hongxiuzhao.net/search.aspx?key={{key}}&pid{{page}}",
+    "ruleSearch": {
+      "name": ".title a@text",
+      "author": ".author a@text",
+      "bookList": ".yd-list",
+      "bookUrl": ".title a@href",
+      "coverUrl": "img@src",
+      "intro": ".summery@text",
+      "wordCount": "@js:\nvar t = \"\";\ntry {\n  var el = result.select(\".title\").first();\n  t = el ? String(el.text()) : \"\";\n} catch (e) {\n}\n\n(String(t).match(/[\\(（]([^）\\)]*)[\\)）]\\s*$/) || [])[1] || \"\""
+    },
+    "exploreUrl": "[\n  {\n    \"title\": \"全部小说\",\n    \"url\": \"/category/0/{{page}}/2/0\",\n    \"style\": {\n      \"layout_flexGrow\": 1,\n      \"layout_flexBasisPercent\": 1\n    }\n  },\n  {\n    \"title\": \"排行榜\",\n    \"url\": \"/category/rank\",\n    \"style\": {\n      \"layout_flexGrow\": 1,\n      \"layout_flexBasisPercent\": 1\n    }\n  },\n  {\n    \"title\": \"都市激情\",\n    \"url\": \"/category/1/{{page}}/2/0\",\n    \"style\": {\n      \"layout_flexGrow\": 1,\n      \"layout_flexBasisPercent\": 0.25\n    }\n  },\n  {\n    \"title\": \"腐小说\",\n    \"url\": \"/category/3/{{page}}/2/0\",\n    \"style\": {\n      \"layout_flexGrow\": 1,\n      \"layout_flexBasisPercent\": 0.25\n    }\n  },\n  {\n    \"title\": \"武侠古典\",\n    \"url\": \"/category/2/{{page}}/2/0\",\n    \"style\": {\n      \"layout_flexGrow\": 1,\n      \"layout_flexBasisPercent\": 0.25\n    }\n  },\n  {\n    \"title\": \"家庭伦理\",\n    \"url\": \"/category/5/{{page}}/2/0\",\n    \"style\": {\n      \"layout_flexGrow\": 1,\n      \"layout_flexBasisPercent\": 0.25\n    }\n  },\n  {\n    \"title\": \"校园春色\",\n    \"url\": \"/category/4/{{page}}/2/0\",\n    \"style\": {\n      \"layout_flexGrow\": 1,\n      \"layout_flexBasisPercent\": 0.25\n    }\n  },\n  {\n    \"title\": \"言情小说\",\n    \"url\": \"/category/6/{{page}}/2/0\",\n    \"style\": {\n      \"layout_flexGrow\": 1,\n      \"layout_flexBasisPercent\": 0.25\n    }\n  },\n  {\n    \"title\": \"凌虐调教\",\n    \"url\": \"/category/7/{{page}}/2/0\",\n    \"style\": {\n      \"layout_flexGrow\": 1,\n      \"layout_flexBasisPercent\": 0.25\n    }\n  },\n  {\n    \"title\": \"肉文合集\",\n    \"url\": \"/category/8/{{page}}/2/0\",\n    \"style\": {\n      \"layout_flexGrow\": 1,\n      \"layout_flexBasisPercent\": 0.25\n    }\n  },\n  {\n    \"title\": \"玄幻其他\",\n    \"url\": \"/category/9/{{page}}/2/0\",\n    \"style\": {\n      \"layout_flexGrow\": 1,\n      \"layout_flexBasisPercent\": 0.25\n    }\n  }\n]\n",
+    "ruleExplore": {},
+    "ruleBookInfo": {
+      "name": "h1@text",
+      "author": ".author a@text",
+      "coverUrl": "img@src",
+      "intro": ".summery@text",
+      "kind": "p.1@text",
+      "lastChapter": ".m-chapters .clear-float li.-1@text"
+    },
+    "ruleToc": {
+      "chapterList": ".m-chapters .clear-float li",
+      "chapterName": "a@text",
+      "chapterUrl": "a@href"
+    },
+    "ruleContent": {
+      "content": ".article-content p@textNodes",
+      "title": ".article-content h1@text",
+      "nextContentUrl": "text.下一页@href",
+      "replaceRegex": "##.*收藏永久网址.*|如果喜欢本站，记得向小伙伴分享哦！"
+    },
+    "lastUpdateTime": 1788935003832,
+    "respondTime": 180000
+  },
+  {
+    "bookSourceType": 0,
+    "enabled": false,
+    "enabledExplore": true,
+    "enabledCookieJar": true,
+    "customOrder": 0,
+    "weight": 0,
     "bookSourceUrl": "https://book.xbookcn.net",
     "bookSourceName": "中文成人文学网·长篇",
     "bookSourceGroup": "@小说",
-    "bookUrlPattern": "https?://book\\.xbookcn\\.net/.*",
+    "bookSourceComment": "搜索未设置\n2026年9月9日",
     "header": "{\n  \"User-Agent\": \"Mozilla/5.0 (Linux; Android 13) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Mobile Safari/537.36\",\n  \"Referer\": \"https://book.xbookcn.net/\",\n  \"Accept-Language\": \"zh-CN,zh;q=0.9\"\n}",
-    "searchUrl": "https://book.xbookcn.net/search?q={{key}}&max-results=30&start={{page*30}}",
-    "ruleSearch": {
-      "name": "name",
-      "bookList": "// @js:\nvar html = typeof result === \"string\" ? result : String(result);\ntry {\n  if (result && result.outerHtml) html = result.outerHtml();\n} catch (e) {}\n\nvar doc = org.jsoup.Jsoup.parse(html, baseUrl);\nvar list = [];\nvar kind = `长篇, ${doc.select(\".post-body\").first()?.text().trim() || \"\"}`;\nvar all = doc.select(\".post-body\").select(\"h3, a[href*='/search/label/']\");\nvar author = \"\";\n\nfor (var i = 0; i < all.size(); i++) {\n  var el = all.get(i);\n  var tagName = String(el.tagName() || \"\").toLowerCase();\n\n  if (tagName === \"h3\") {\n    author = (el.text() || \"\").trim();\n    continue;\n  }\n\n  var name = String(el.attr(\"title\") || el.text() || \"\")\n    .replace(/[《》]/g, \"\")\n    .trim();\n  var parentText = String(el.parent()?.text() || \"\").trim();\n  author = (String(parentText).match(/作者[：:]\\s*([^\\s\\n\\r，,。]+)/) || [])[1] || author\n\n  var bookUrl = String(el.attr(\"href\") || \"\");\n  if (!bookUrl) continue;\n\n  if (bookUrl.indexOf(\"http\") !== 0) {\n    bookUrl = baseUrl + (bookUrl.charAt(0) === \"/\" ? bookUrl : \"/\" + bookUrl);\n  }\n\n  list.push({\n    name,\n    author,\n    bookUrl,\n    kind,\n  });\n}\n\nlist;\n",
-      "bookUrl": "bookUrl"
-    },
+    "ruleSearch": {},
     "exploreUrl": "[\n    {\n        \"title\": \"作家专栏\",\n        \"url\": \"/p/columnist.html\",\n        \"style\": {\n            \"layout_flexGrow\": 1,\n            \"layout_flexBasisPercent\": 0.25\n        }\n    },\n    {\n        \"title\": \"通俗小说\",\n        \"url\": \"/p/popular.html\",\n        \"style\": {\n            \"layout_flexGrow\": 1,\n            \"layout_flexBasisPercent\": 0.25\n        }\n    },\n    {\n        \"title\": \"都市小说\",\n        \"url\": \"/p/urban.html\",\n        \"style\": {\n            \"layout_flexGrow\": 1,\n            \"layout_flexBasisPercent\": 0.25\n        }\n    },\n    {\n        \"title\": \"武侠小说\",\n        \"url\": \"/p/martial.html\",\n        \"style\": {\n            \"layout_flexGrow\": 1,\n            \"layout_flexBasisPercent\": 0.25\n        }\n    },\n    {\n        \"title\": \"奇幻小说\",\n        \"url\": \"/p/fantasy.html\",\n        \"style\": {\n            \"layout_flexGrow\": 1,\n            \"layout_flexBasisPercent\": 0.25\n        }\n    },\n    {\n        \"title\": \"冒险小说\",\n        \"url\": \"/p/adventure.html\",\n        \"style\": {\n            \"layout_flexGrow\": 1,\n            \"layout_flexBasisPercent\": 0.25\n        }\n    },\n    {\n        \"title\": \"穿越小说\",\n        \"url\": \"/p/history.html\",\n        \"style\": {\n            \"layout_flexGrow\": 1,\n            \"layout_flexBasisPercent\": 0.25\n        }\n    },\n    {\n        \"title\": \"黑暗小说\",\n        \"url\": \"/p/dark.html\",\n        \"style\": {\n            \"layout_flexGrow\": 1,\n            \"layout_flexBasisPercent\": 0.25\n        }\n    },\n    {\n        \"title\": \"言情小说\",\n        \"url\": \"/p/romance.html\",\n        \"style\": {\n            \"layout_flexGrow\": 1,\n            \"layout_flexBasisPercent\": 0.25\n        }\n    },\n    {\n        \"title\": \"全部小说\",\n        \"url\": \"/p/all.html\",\n        \"style\": {\n            \"layout_flexGrow\": 1,\n            \"layout_flexBasisPercent\": 0.25\n        }\n    }\n]",
     "ruleExplore": {
       "name": "name",
@@ -41,51 +82,7 @@
       "content": ".post-body@html",
       "title": "h3.post-title.entry-title@text"
     },
-    "lastUpdateTime": 1788931974696,
-    "respondTime": 180000
-  },
-  {
-    "bookSourceType": 0,
-    "enabled": true,
-    "enabledExplore": true,
-    "enabledCookieJar": false,
-    "customOrder": 0,
-    "weight": 0,
-    "bookSourceUrl": "https://hongxiuzhao.net/",
-    "bookSourceName": "红袖招",
-    "bookSourceGroup": "@小说",
-    "searchUrl": "https://hongxiuzhao.net/search.aspx?key={{key}}&pid{{page}}",
-    "ruleSearch": {
-      "name": ".title a@text",
-      "author": ".author a@text",
-      "bookList": ".yd-list",
-      "bookUrl": ".title a@href",
-      "coverUrl": "img@src",
-      "intro": ".summery@text",
-      "wordCount": ".title @text##^[^(（]*[$（]\\s*|\\s*[$）].*$"
-    },
-    "exploreUrl": "[\n  {\n    \"title\": \"全部小说\",\n    \"url\": \"/category/0/{{page}}/2/0\",\n    \"style\": {\n      \"layout_flexGrow\": 1,\n      \"layout_flexBasisPercent\": 1\n    }\n  },\n  {\n    \"title\": \"排行榜\",\n    \"url\": \"/category/rank\",\n    \"style\": {\n      \"layout_flexGrow\": 1,\n      \"layout_flexBasisPercent\": 1\n    }\n  },\n  {\n    \"title\": \"都市激情\",\n    \"url\": \"/category/1/{{page}}/2/0\",\n    \"style\": {\n      \"layout_flexGrow\": 1,\n      \"layout_flexBasisPercent\": 0.25\n    }\n  },\n  {\n    \"title\": \"腐小说\",\n    \"url\": \"/category/3/{{page}}/2/0\",\n    \"style\": {\n      \"layout_flexGrow\": 1,\n      \"layout_flexBasisPercent\": 0.25\n    }\n  },\n  {\n    \"title\": \"武侠古典\",\n    \"url\": \"/category/2/{{page}}/2/0\",\n    \"style\": {\n      \"layout_flexGrow\": 1,\n      \"layout_flexBasisPercent\": 0.25\n    }\n  },\n  {\n    \"title\": \"家庭伦理\",\n    \"url\": \"/category/5/{{page}}/2/0\",\n    \"style\": {\n      \"layout_flexGrow\": 1,\n      \"layout_flexBasisPercent\": 0.25\n    }\n  },\n  {\n    \"title\": \"校园春色\",\n    \"url\": \"/category/4/{{page}}/2/0\",\n    \"style\": {\n      \"layout_flexGrow\": 1,\n      \"layout_flexBasisPercent\": 0.25\n    }\n  },\n  {\n    \"title\": \"言情小说\",\n    \"url\": \"/category/6/{{page}}/2/0\",\n    \"style\": {\n      \"layout_flexGrow\": 1,\n      \"layout_flexBasisPercent\": 0.25\n    }\n  },\n  {\n    \"title\": \"凌虐调教\",\n    \"url\": \"/category/7/{{page}}/2/0\",\n    \"style\": {\n      \"layout_flexGrow\": 1,\n      \"layout_flexBasisPercent\": 0.25\n    }\n  },\n  {\n    \"title\": \"肉文合集\",\n    \"url\": \"/category/8/{{page}}/2/0\",\n    \"style\": {\n      \"layout_flexGrow\": 1,\n      \"layout_flexBasisPercent\": 0.25\n    }\n  },\n  {\n    \"title\": \"玄幻其他\",\n    \"url\": \"/category/9/{{page}}/2/0\",\n    \"style\": {\n      \"layout_flexGrow\": 1,\n      \"layout_flexBasisPercent\": 0.25\n    }\n  }\n]\n",
-    "ruleExplore": {},
-    "ruleBookInfo": {
-      "name": "h1@text",
-      "author": ".author a@text",
-      "coverUrl": "img@src",
-      "intro": ".summery@text",
-      "kind": "p.1@text",
-      "lastChapter": ".m-chapters .clear-float li.-1@text"
-    },
-    "ruleToc": {
-      "chapterList": ".m-chapters .clear-float li",
-      "chapterName": "a@text",
-      "chapterUrl": "a@href"
-    },
-    "ruleContent": {
-      "content": ".article-content p@textNodes",
-      "title": ".article-content h1@text",
-      "nextContentUrl": "text.下一页@href",
-      "replaceRegex": "##.*收藏永久网址.*|如果喜欢本站，记得向小伙伴分享哦！"
-    },
-    "lastUpdateTime": 1788931606709,
+    "lastUpdateTime": 1788933844840,
     "respondTime": 180000
   },
   {
