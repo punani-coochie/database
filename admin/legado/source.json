@@ -6,7 +6,7 @@
     "enabledCookieJar": true,
     "customOrder": 14,
     "weight": 0,
-    "bookSourceUrl": "https://18mh.net/novel",
+    "bookSourceUrl": "https://18mh.net/novel/",
     "bookSourceName": "18mh小说",
     "bookSourceGroup": "@小说",
     "header": "{\n\"User-Agent\":\"Mozilla/5.0 (Linux; Android 9) Mobile Safari/537.36\",\"referer\":\"{{baseUrl}}\",\n}",
@@ -38,7 +38,7 @@
     "ruleContent": {
       "content": ".article@html"
     },
-    "lastUpdateTime": 1788936466635,
+    "lastUpdateTime": 1788936542437,
     "respondTime": 180000
   },
   {
