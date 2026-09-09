@@ -3,6 +3,51 @@
     "bookSourceType": 0,
     "enabled": true,
     "enabledExplore": true,
+    "enabledCookieJar": true,
+    "customOrder": 0,
+    "weight": 0,
+    "bookSourceUrl": "https://book.xbookcn.net",
+    "bookSourceName": "中文成人文学网·长篇",
+    "bookSourceGroup": "@小说",
+    "bookUrlPattern": "https?://book\\.xbookcn\\.net/.*",
+    "header": "{\n  \"User-Agent\": \"Mozilla/5.0 (Linux; Android 13) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Mobile Safari/537.36\",\n  \"Referer\": \"https://book.xbookcn.net/\",\n  \"Accept-Language\": \"zh-CN,zh;q=0.9\"\n}",
+    "searchUrl": "https://book.xbookcn.net/search?q={{key}}&max-results=30&start={{page*30}}",
+    "ruleSearch": {
+      "name": "name",
+      "bookList": "// @js:\nvar html = typeof result === \"string\" ? result : String(result);\ntry {\n  if (result && result.outerHtml) html = result.outerHtml();\n} catch (e) {}\n\nvar doc = org.jsoup.Jsoup.parse(html, baseUrl);\nvar list = [];\nvar kind = `长篇, ${doc.select(\".post-body\").first()?.text().trim() || \"\"}`;\nvar all = doc.select(\".post-body\").select(\"h3, a[href*='/search/label/']\");\nvar author = \"\";\n\nfor (var i = 0; i < all.size(); i++) {\n  var el = all.get(i);\n  var tagName = String(el.tagName() || \"\").toLowerCase();\n\n  if (tagName === \"h3\") {\n    author = (el.text() || \"\").trim();\n    continue;\n  }\n\n  var name = String(el.attr(\"title\") || el.text() || \"\")\n    .replace(/[《》]/g, \"\")\n    .trim();\n  var parentText = String(el.parent()?.text() || \"\").trim();\n  author = (String(parentText).match(/作者[：:]\\s*([^\\s\\n\\r，,。]+)/) || [])[1] || author\n\n  var bookUrl = String(el.attr(\"href\") || \"\");\n  if (!bookUrl) continue;\n\n  if (bookUrl.indexOf(\"http\") !== 0) {\n    bookUrl = baseUrl + (bookUrl.charAt(0) === \"/\" ? bookUrl : \"/\" + bookUrl);\n  }\n\n  list.push({\n    name,\n    author,\n    bookUrl,\n    kind,\n  });\n}\n\nlist;\n",
+      "bookUrl": "bookUrl"
+    },
+    "exploreUrl": "[\n    {\n        \"title\": \"作家专栏\",\n        \"url\": \"/p/columnist.html\",\n        \"style\": {\n            \"layout_flexGrow\": 1,\n            \"layout_flexBasisPercent\": 0.25\n        }\n    },\n    {\n        \"title\": \"通俗小说\",\n        \"url\": \"/p/popular.html\",\n        \"style\": {\n            \"layout_flexGrow\": 1,\n            \"layout_flexBasisPercent\": 0.25\n        }\n    },\n    {\n        \"title\": \"都市小说\",\n        \"url\": \"/p/urban.html\",\n        \"style\": {\n            \"layout_flexGrow\": 1,\n            \"layout_flexBasisPercent\": 0.25\n        }\n    },\n    {\n        \"title\": \"武侠小说\",\n        \"url\": \"/p/martial.html\",\n        \"style\": {\n            \"layout_flexGrow\": 1,\n            \"layout_flexBasisPercent\": 0.25\n        }\n    },\n    {\n        \"title\": \"奇幻小说\",\n        \"url\": \"/p/fantasy.html\",\n        \"style\": {\n            \"layout_flexGrow\": 1,\n            \"layout_flexBasisPercent\": 0.25\n        }\n    },\n    {\n        \"title\": \"冒险小说\",\n        \"url\": \"/p/adventure.html\",\n        \"style\": {\n            \"layout_flexGrow\": 1,\n            \"layout_flexBasisPercent\": 0.25\n        }\n    },\n    {\n        \"title\": \"穿越小说\",\n        \"url\": \"/p/history.html\",\n        \"style\": {\n            \"layout_flexGrow\": 1,\n            \"layout_flexBasisPercent\": 0.25\n        }\n    },\n    {\n        \"title\": \"黑暗小说\",\n        \"url\": \"/p/dark.html\",\n        \"style\": {\n            \"layout_flexGrow\": 1,\n            \"layout_flexBasisPercent\": 0.25\n        }\n    },\n    {\n        \"title\": \"言情小说\",\n        \"url\": \"/p/romance.html\",\n        \"style\": {\n            \"layout_flexGrow\": 1,\n            \"layout_flexBasisPercent\": 0.25\n        }\n    },\n    {\n        \"title\": \"全部小说\",\n        \"url\": \"/p/all.html\",\n        \"style\": {\n            \"layout_flexGrow\": 1,\n            \"layout_flexBasisPercent\": 0.25\n        }\n    }\n]",
+    "ruleExplore": {
+      "name": "name",
+      "author": "author",
+      "bookList": "@js:\nvar html = typeof result === \"string\" ? result : String(result);\ntry {\n  if (result && result.outerHtml) html = result.outerHtml();\n} catch (e) {}\n\nvar doc = org.jsoup.Jsoup.parse(html, baseUrl);\nvar list = [];\nvar kind = `长篇, ${doc.select(\".post-body\").first()?.text().trim() || \"\"}`;\nvar all = doc.select(\".post-body\").select(\"h3, a[href*='/search/label/']\");\nvar author = \"\";\n\nfor (var i = 0; i < all.size(); i++) {\n  var el = all.get(i);\n  var tagName = String(el.tagName() || \"\").toLowerCase();\n\n  if (tagName === \"h3\") {\n    author = (el.text() || \"\").trim();\n    continue;\n  }\n\n  var name = String(el.attr(\"title\") || el.text() || \"\")\n    .replace(/[《》]/g, \"\")\n    .trim();\n  var parentText = String(el.parent()?.text() || \"\").trim();\n  author = (String(parentText).match(/作者[：:]\\s*([^\\s\\n\\r，,。]+)/) || [])[1] || author\n\n  var bookUrl = String(el.attr(\"href\") || \"\");\n  if (!bookUrl) continue;\n\n  if (bookUrl.indexOf(\"http\") !== 0) {\n    bookUrl = baseUrl + (bookUrl.charAt(0) === \"/\" ? bookUrl : \"/\" + bookUrl);\n  }\n\n  list.push({\n    name,\n    author,\n    bookUrl,\n    kind,\n  });\n}\n\nlist;\n",
+      "bookUrl": "bookUrl",
+      "intro": "intro",
+      "kind": "kind"
+    },
+    "ruleBookInfo": {
+      "name": ".status-msg-body@text",
+      "author": ".post-outer:eq(0) .post-body > p:eq(0)@text##^\\s+|\\s+$##^作者[：:]\\s*",
+      "intro": "h3:matches(内容简介) a@text||.post-body@text##(?s)^(.{0,200}).*##$1",
+      "kind": "长篇·成人"
+    },
+    "ruleToc": {
+      "chapterList": "@js:\nvar url = baseUrl;\nvar list = [];\nvar isFirstPage = true;\n\nwhile (url) {\n    var pageHtml = java.ajax(url);\n    var doc = org.jsoup.Jsoup.parse(pageHtml)\n    var tocs = doc.select(\"h3.post-title.entry-title a\");\n    \n    if (isFirstPage) {\n        isFirstPage = false;\n        var firstToc = tocs.first();\n        if(firstToc.text().indexOf(\"内容简介\") === -1) {\n            tocs = tocs.not(firstToc);\n        }\n    }\n\n    list = list.concat(tocs);\n\n    // 获取下一页\n    var next = doc.select(\"a.blog-pager-older-link\").attr(\"href\");\n\n    if (!next) {\n        break;\n    }\n\n    // 防止跳到其他标签\n    if (next.indexOf(baseUrl) === -1) {\n        break;\n    }\n\n    url = next;\n}\n\nlist;",
+      "chapterName": "@text",
+      "chapterUrl": "@href"
+    },
+    "ruleContent": {
+      "content": ".post-body@html",
+      "title": "h3.post-title.entry-title@text"
+    },
+    "lastUpdateTime": 1788931974696,
+    "respondTime": 180000
+  },
+  {
+    "bookSourceType": 0,
+    "enabled": true,
+    "enabledExplore": true,
     "enabledCookieJar": false,
     "customOrder": 0,
     "weight": 0,
@@ -75,52 +120,6 @@
       "title": ".post h2"
     },
     "lastUpdateTime": 1788929381099,
-    "respondTime": 180000
-  },
-  {
-    "bookSourceType": 0,
-    "enabled": true,
-    "enabledExplore": true,
-    "enabledCookieJar": true,
-    "customOrder": 0,
-    "weight": 0,
-    "bookSourceUrl": "https://book.xbookcn.net",
-    "bookSourceName": "中文成人文学网·长篇",
-    "bookSourceGroup": "@小说",
-    "bookUrlPattern": "https?://book\\.xbookcn\\.net/.*",
-    "header": "{\n  \"User-Agent\": \"Mozilla/5.0 (Linux; Android 13) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Mobile Safari/537.36\",\n  \"Referer\": \"https://book.xbookcn.net/\",\n  \"Accept-Language\": \"zh-CN,zh;q=0.9\"\n}",
-    "searchUrl": "https://book.xbookcn.net/search?q={{key}}&max-results=30&start={{page*30}}",
-    "ruleSearch": {
-      "name": "name",
-      "bookList": "@js:\nvar els = result.select(\"h3 a, .post-title a\");\nvar map = {};\nvar list = [];\nfor (var i = 0; i < els.size(); i++) {\n  var a = els.get(i);\n  var t = String(a.text() || \"\").trim();\n  if (!t) continue;\n  var name = t\n    .replace(/\\s*第\\s*\\d+\\s*[章节卷集].*$/g, \"\")\n    .replace(/\\s*第[一二三四五六七八九十百千万零两\\d]+[章节卷集].*$/g, \"\")\n    .replace(/\\s*内容简介.*$/g, \"\")\n    .replace(/\\s*-\\s*长篇.*$/g, \"\")\n    .trim();\n  if (!name || name.length < 2) continue;\n  if (map[name]) continue;\n  map[name] = true;\n  list.push({\n    name: name,\n    bookUrl: \"https://book.xbookcn.net/search/label/\" + encodeURIComponent(name) + \"?max-results=500\"\n  });\n}\nlist;",
-      "bookUrl": "bookUrl"
-    },
-    "exploreUrl": "[\n    {\n        \"title\": \"作家专栏\",\n        \"url\": \"/p/columnist.html\",\n        \"style\": {\n            \"layout_flexGrow\": 1,\n            \"layout_flexBasisPercent\": 0.25\n        }\n    },\n    {\n        \"title\": \"通俗小说\",\n        \"url\": \"/p/popular.html\",\n        \"style\": {\n            \"layout_flexGrow\": 1,\n            \"layout_flexBasisPercent\": 0.25\n        }\n    },\n    {\n        \"title\": \"都市小说\",\n        \"url\": \"/p/urban.html\",\n        \"style\": {\n            \"layout_flexGrow\": 1,\n            \"layout_flexBasisPercent\": 0.25\n        }\n    },\n    {\n        \"title\": \"武侠小说\",\n        \"url\": \"/p/martial.html\",\n        \"style\": {\n            \"layout_flexGrow\": 1,\n            \"layout_flexBasisPercent\": 0.25\n        }\n    },\n    {\n        \"title\": \"奇幻小说\",\n        \"url\": \"/p/fantasy.html\",\n        \"style\": {\n            \"layout_flexGrow\": 1,\n            \"layout_flexBasisPercent\": 0.25\n        }\n    },\n    {\n        \"title\": \"冒险小说\",\n        \"url\": \"/p/adventure.html\",\n        \"style\": {\n            \"layout_flexGrow\": 1,\n            \"layout_flexBasisPercent\": 0.25\n        }\n    },\n    {\n        \"title\": \"穿越小说\",\n        \"url\": \"/p/history.html\",\n        \"style\": {\n            \"layout_flexGrow\": 1,\n            \"layout_flexBasisPercent\": 0.25\n        }\n    },\n    {\n        \"title\": \"黑暗小说\",\n        \"url\": \"/p/dark.html\",\n        \"style\": {\n            \"layout_flexGrow\": 1,\n            \"layout_flexBasisPercent\": 0.25\n        }\n    },\n    {\n        \"title\": \"言情小说\",\n        \"url\": \"/p/romance.html\",\n        \"style\": {\n            \"layout_flexGrow\": 1,\n            \"layout_flexBasisPercent\": 0.25\n        }\n    },\n    {\n        \"title\": \"全部小说\",\n        \"url\": \"/p/all.html\",\n        \"style\": {\n            \"layout_flexGrow\": 1,\n            \"layout_flexBasisPercent\": 0.25\n        }\n    }\n]",
-    "ruleExplore": {
-      "name": "name",
-      "author": "author",
-      "bookList": "@js:\nvar html = typeof result === \"string\" ? result : String(result);\ntry {\n  if (result && result.outerHtml) html = result.outerHtml();\n} catch (e) {}\n\nvar doc = org.jsoup.Jsoup.parse(html, baseUrl);\nvar list = [];\nvar kind = `长篇, ${doc.select(\".post-body\").first()?.text().trim() || \"\"}`;\nvar all = doc.select(\".post-body\").select(\"h3, a[href*='/search/label/']\");\nvar author = \"\";\n\nfor (var i = 0; i < all.size(); i++) {\n  var el = all.get(i);\n  var tagName = String(el.tagName() || \"\").toLowerCase();\n\n  if (tagName === \"h3\") {\n    author = (el.text() || \"\").trim();\n    continue;\n  }\n\n  var name = String(el.attr(\"title\") || el.text() || \"\")\n    .replace(/[《》]/g, \"\")\n    .trim();\n  var parentText = String(el.parent()?.text() || \"\").trim();\n  author = (String(parentText).match(/作者[：:]\\s*([^\\s\\n\\r，,。]+)/) || [])[1] || author\n\n  var bookUrl = String(el.attr(\"href\") || \"\");\n  if (!bookUrl) continue;\n\n  if (bookUrl.indexOf(\"http\") !== 0) {\n    bookUrl = baseUrl + (bookUrl.charAt(0) === \"/\" ? bookUrl : \"/\" + bookUrl);\n  }\n\n  list.push({\n    name,\n    author,\n    bookUrl,\n    kind,\n  });\n}\n\nlist;\n",
-      "bookUrl": "bookUrl",
-      "intro": "intro",
-      "kind": "kind"
-    },
-    "ruleBookInfo": {
-      "name": ".status-msg-body@text",
-      "author": ".post-outer:eq(0) .post-body > p:eq(0)@text##^\\s+|\\s+$##^作者[：:]\\s*",
-      "intro": "h3:matches(内容简介) a@text||.post-body@text##(?s)^(.{0,200}).*##$1",
-      "kind": "长篇·成人"
-    },
-    "ruleToc": {
-      "chapterList": "@js:\nvar url = baseUrl;\nvar list = [];\nvar isFirstPage = true;\n\nwhile (url) {\n    var pageHtml = java.ajax(url);\n    var doc = org.jsoup.Jsoup.parse(pageHtml)\n    var tocs = doc.select(\"h3.post-title.entry-title a\");\n    \n    if (isFirstPage) {\n        isFirstPage = false;\n        var firstToc = tocs.first();\n        if(firstToc.text().indexOf(\"内容简介\") === -1) {\n            tocs = tocs.not(firstToc);\n        }\n    }\n\n    list = list.concat(tocs);\n\n    // 获取下一页\n    var next = doc.select(\"a.blog-pager-older-link\").attr(\"href\");\n\n    if (!next) {\n        break;\n    }\n\n    // 防止跳到其他标签\n    if (next.indexOf(baseUrl) === -1) {\n        break;\n    }\n\n    url = next;\n}\n\nlist;",
-      "chapterName": "@text",
-      "chapterUrl": "@href"
-    },
-    "ruleContent": {
-      "content": ".post-body@html",
-      "title": "h3.post-title.entry-title@text",
-      "replaceRegex": "##目录:.*|##标签:.*|##Posted by.*|##Labels:.*"
-    },
-    "lastUpdateTime": 1788928944687,
     "respondTime": 180000
   },
   {
