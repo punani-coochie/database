@@ -1,5 +1,89 @@
 [
   {
+    "bookSourceType": 2,
+    "enabled": true,
+    "enabledExplore": true,
+    "enabledCookieJar": true,
+    "customOrder": 14,
+    "weight": 0,
+    "bookSourceUrl": "https://18mh.net/comic/",
+    "bookSourceName": "18mh漫画",
+    "bookSourceGroup": "@漫画",
+    "header": "{\n\"User-Agent\":\"Mozilla/5.0 (Linux; Android 9) Mobile Safari/537.36\",\"referer\":\"{{baseUrl}}\",\n}",
+    "searchUrl": "search/{{key}}/page/{{page}}",
+    "ruleSearch": {
+      "name": "h2@text",
+      "author": "a.2@text",
+      "bookList": ".dx-novel-list > li",
+      "bookUrl": "a.0@href",
+      "coverUrl": "img@src",
+      "intro": "a.3@html",
+      "kind": "a.3@text"
+    },
+    "exploreUrl": "[\n  {\n    \"title\": \"全部小说\",\n    \"url\": \"all/page/{{page}}\",\n    \"style\": {\n      \"layout_flexGrow\": 1,\n      \"layout_flexBasisPercent\": 0.25\n    }\n  },\n  {\n    \"title\": \"排行榜\",\n    \"url\": \"rank/page/{{page}}\",\n    \"style\": {\n      \"layout_flexGrow\": 1,\n      \"layout_flexBasisPercent\": 0.25\n    }\n  },\n  {\n    \"title\": \"热门小说\",\n    \"url\": \"hot/page/{{page}}\",\n    \"style\": {\n      \"layout_flexGrow\": 1,\n      \"layout_flexBasisPercent\": 0.25\n    }\n  },\n  {\n    \"title\": \"最新上架\",\n    \"url\": \"freshest/page/{{page}}\",\n    \"style\": {\n      \"layout_flexGrow\": 1,\n      \"layout_flexBasisPercent\": 0.25\n    }\n  },\n  {\n    \"title\": \"最近更新\",\n    \"url\": \"newest/page/{{page}}\",\n    \"style\": {\n      \"layout_flexGrow\": 1,\n      \"layout_flexBasisPercent\": 0.25\n    }\n  },\n  {\n    \"title\": \"日本H漫\",\n    \"url\": \"all/rb/page/{{page}}\",\n    \"style\": {\n      \"layout_flexGrow\": 1,\n      \"layout_flexBasisPercent\": 0.25\n    }\n  },\n  {\n    \"title\": \"韩国H漫\",\n    \"url\": \"all/hg/page/{{page}}\",\n    \"style\": {\n      \"layout_flexGrow\": 1,\n      \"layout_flexBasisPercent\": 0.25\n    }\n  }\n  \n]\n",
+    "ruleExplore": {},
+    "ruleBookInfo": {
+      "name": ".detail-page__title@text",
+      "author": ".detail-page__meta-item.1@text",
+      "coverUrl": ".detail-page__poster-img@src",
+      "intro": ".detail-intro__text.0@text",
+      "kind": ".detail-page__meta-item.1@text",
+      "lastChapter": ".detail-page__meta-item.4@text"
+    },
+    "ruleToc": {
+      "chapterList": ".detail-page__catalog-list > li",
+      "chapterName": ".detail-page__chapter-title@text",
+      "chapterUrl": "a@href"
+    },
+    "ruleContent": {
+      "content": ".article@html"
+    },
+    "lastUpdateTime": 1788938199887,
+    "respondTime": 180000
+  },
+  {
+    "bookSourceType": 0,
+    "enabled": true,
+    "enabledExplore": true,
+    "enabledCookieJar": true,
+    "customOrder": 14,
+    "weight": 0,
+    "bookSourceUrl": "https://18mh.net/mv/",
+    "bookSourceName": "18mh视频",
+    "bookSourceGroup": "@视频",
+    "header": "{\n\"User-Agent\":\"Mozilla/5.0 (Linux; Android 9) Mobile Safari/537.36\",\"referer\":\"{{baseUrl}}\",\n}",
+    "searchUrl": "search/{{key}}/page/{{page}}",
+    "ruleSearch": {
+      "name": "h2@text",
+      "author": "a.2@text",
+      "bookList": ".dx-novel-list > li",
+      "bookUrl": "a.0@href",
+      "coverUrl": "img@src",
+      "intro": "a.3@html",
+      "kind": "a.3@text"
+    },
+    "exploreUrl": "[\n  {\n    \"title\": \"全部小说\",\n    \"url\": \"all/page/{{page}}\",\n    \"style\": {\n      \"layout_flexGrow\": 1,\n      \"layout_flexBasisPercent\": 0.25\n    }\n  },\n  {\n    \"title\": \"排行榜\",\n    \"url\": \"rank/page/{{page}}\",\n    \"style\": {\n      \"layout_flexGrow\": 1,\n      \"layout_flexBasisPercent\": 0.25\n    }\n  },\n  {\n    \"title\": \"热门小说\",\n    \"url\": \"hot/page/{{page}}\",\n    \"style\": {\n      \"layout_flexGrow\": 1,\n      \"layout_flexBasisPercent\": 0.25\n    }\n  },\n  {\n    \"title\": \"最新上架\",\n    \"url\": \"freshest/page/{{page}}\",\n    \"style\": {\n      \"layout_flexGrow\": 1,\n      \"layout_flexBasisPercent\": 0.25\n    }\n  },\n  {\n    \"title\": \"最近更新\",\n    \"url\": \"newest/page/{{page}}\",\n    \"style\": {\n      \"layout_flexGrow\": 1,\n      \"layout_flexBasisPercent\": 0.25\n    }\n  },\n  {\n    \"title\": \"日本H漫\",\n    \"url\": \"all/rb/page/{{page}}\",\n    \"style\": {\n      \"layout_flexGrow\": 1,\n      \"layout_flexBasisPercent\": 0.25\n    }\n  },\n  {\n    \"title\": \"韩国H漫\",\n    \"url\": \"all/hg/page/{{page}}\",\n    \"style\": {\n      \"layout_flexGrow\": 1,\n      \"layout_flexBasisPercent\": 0.25\n    }\n  }\n  \n]\n",
+    "ruleExplore": {},
+    "ruleBookInfo": {
+      "name": ".detail-page__title@text",
+      "author": ".detail-page__meta-item.1@text",
+      "coverUrl": ".detail-page__poster-img@src",
+      "intro": ".detail-intro__text.0@text",
+      "kind": ".detail-page__meta-item.1@text",
+      "lastChapter": ".detail-page__meta-item.4@text"
+    },
+    "ruleToc": {
+      "chapterList": ".detail-page__catalog-list > li",
+      "chapterName": ".detail-page__chapter-title@text",
+      "chapterUrl": "a@href"
+    },
+    "ruleContent": {
+      "content": ".article@html"
+    },
+    "lastUpdateTime": 1788937840948,
+    "respondTime": 180000
+  },
+  {
     "bookSourceType": 0,
     "enabled": true,
     "enabledExplore": true,
@@ -20,7 +104,7 @@
       "intro": "a.3@html",
       "kind": "a.3@text"
     },
-    "exploreUrl": "全部小说::/novel/all?page={{page}}\n热门小说::/novel/common?type=hot&page={{page}}\n最新更新::/novel/common?type=newest&page={{page}}\n都市激情::/novel/all?theme=1&page={{page}}\n校园春色::/novel/all?theme=2&page={{page}}\n乡村爱情::/novel/all?theme=3&page={{page}}\n系统异能::/novel/all?theme=4&page={{page}}\n家庭乱伦::/novel/all?theme=5&page={{page}}\n穿越重生::/novel/all?theme=6&page={{page}}\n经典武侠::/novel/all?theme=7&page={{page}}\n同人改编::/novel/all?theme=8&page={{page}}\n科学幻想::/novel/all?theme=9&page={{page}}\n东方玄幻::/novel/all?theme=10&page={{page}}\n娱乐明星::/novel/all?theme=11&page={{page}}\n历史架空::/novel/all?theme=12&page={{page}}\n西方魔幻::/novel/all?theme=13&page={{page}}\n贤者小说::/novel/all?theme=14&page={{page}}",
+    "exploreUrl": "[\n  {\n    \"title\": \"全部小说\",\n    \"url\": \"all/page/{{page}}\",\n    \"style\": {\n      \"layout_flexGrow\": 1,\n      \"layout_flexBasisPercent\": 0.25\n    }\n  },\n  {\n    \"title\": \"排行榜\",\n    \"url\": \"rank/page/{{page}}\",\n    \"style\": {\n      \"layout_flexGrow\": 1,\n      \"layout_flexBasisPercent\": 0.25\n    }\n  },\n  {\n    \"title\": \"热门小说\",\n    \"url\": \"hot/page/{{page}}\",\n    \"style\": {\n      \"layout_flexGrow\": 1,\n      \"layout_flexBasisPercent\": 0.25\n    }\n  },\n  {\n    \"title\": \"原创小说\",\n    \"url\": \"original/page/{{page}}\",\n    \"style\": {\n      \"layout_flexGrow\": 1,\n      \"layout_flexBasisPercent\": 0.25\n    }\n  },\n  {\n    \"title\": \"最新上架\",\n    \"url\": \"last_published/page/{{page}}\",\n    \"style\": {\n      \"layout_flexGrow\": 1,\n      \"layout_flexBasisPercent\": 0.25\n    }\n  },\n  {\n    \"title\": \"最近更新\",\n    \"url\": \"newest/page/{{page}}\",\n    \"style\": {\n      \"layout_flexGrow\": 1,\n      \"layout_flexBasisPercent\": 0.25\n    }\n  },\n  {\n    \"title\": \"都市激情\",\n    \"url\": \"all/dsjq/page/{{page}}\",\n    \"style\": {\n      \"layout_flexGrow\": 1,\n      \"layout_flexBasisPercent\": 0.25\n    }\n  },\n  {\n    \"title\": \"校园春色\",\n    \"url\": \"all/xycs/page/{{page}}\",\n    \"style\": {\n      \"layout_flexGrow\": 1,\n      \"layout_flexBasisPercent\": 0.25\n    }\n  },\n  {\n    \"title\": \"乡村爱情\",\n    \"url\": \"all/xcaq/page/{{page}}\",\n    \"style\": {\n      \"layout_flexGrow\": 1,\n      \"layout_flexBasisPercent\": 0.25\n    }\n  },\n  {\n    \"title\": \"系统异能\",\n    \"url\": \"all/xtyn/page/{{page}}\",\n    \"style\": {\n      \"layout_flexGrow\": 1,\n      \"layout_flexBasisPercent\": 0.25\n    }\n  },\n  {\n    \"title\": \"家庭乱伦\",\n    \"url\": \"all/jtll/page/{{page}}\",\n    \"style\": {\n      \"layout_flexGrow\": 1,\n      \"layout_flexBasisPercent\": 0.25\n    }\n  },\n  {\n    \"title\": \"穿越重生\",\n    \"url\": \"all/cycs/page/{{page}}\",\n    \"style\": {\n      \"layout_flexGrow\": 1,\n      \"layout_flexBasisPercent\": 0.25\n    }\n  },\n  {\n    \"title\": \"经典武侠\",\n    \"url\": \"all/jdwx/page/{{page}}\",\n    \"style\": {\n      \"layout_flexGrow\": 1,\n      \"layout_flexBasisPercent\": 0.25\n    }\n  },\n  {\n    \"title\": \"同人改编\",\n    \"url\": \"all/trgb/page/{{page}}\",\n    \"style\": {\n      \"layout_flexGrow\": 1,\n      \"layout_flexBasisPercent\": 0.25\n    }\n  },\n  {\n    \"title\": \"科学幻想\",\n    \"url\": \"all/kxhx/page/{{page}}\",\n    \"style\": {\n      \"layout_flexGrow\": 1,\n      \"layout_flexBasisPercent\": 0.25\n    }\n  },\n  {\n    \"title\": \"东方玄幻\",\n    \"url\": \"all/dfxh/page/{{page}}\",\n    \"style\": {\n      \"layout_flexGrow\": 1,\n      \"layout_flexBasisPercent\": 0.25\n    }\n  },\n  {\n    \"title\": \"娱乐明星\",\n    \"url\": \"all/ylmx/page/{{page}}\",\n    \"style\": {\n      \"layout_flexGrow\": 1,\n      \"layout_flexBasisPercent\": 0.25\n    }\n  },\n  {\n    \"title\": \"历史架空\",\n    \"url\": \"all/lsjk/page/{{page}}\",\n    \"style\": {\n      \"layout_flexGrow\": 1,\n      \"layout_flexBasisPercent\": 0.25\n    }\n  },\n  {\n    \"title\": \"西方魔幻\",\n    \"url\": \"all/xfmh/page/{{page}}\",\n    \"style\": {\n      \"layout_flexGrow\": 1,\n      \"layout_flexBasisPercent\": 0.25\n    }\n  },\n  {\n    \"title\": \"贤者小说\",\n    \"url\": \"all/xzxs/page/{{page}}\",\n    \"style\": {\n      \"layout_flexGrow\": 1,\n      \"layout_flexBasisPercent\": 0.25\n    }\n  }\n]\n\n",
     "ruleExplore": {},
     "ruleBookInfo": {
       "name": ".detail-page__title@text",
@@ -38,7 +122,7 @@
     "ruleContent": {
       "content": ".article@html"
     },
-    "lastUpdateTime": 1788936542437,
+    "lastUpdateTime": 1788937637916,
     "respondTime": 180000
   },
   {
