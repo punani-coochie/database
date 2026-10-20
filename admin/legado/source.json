@@ -4,7 +4,7 @@
     "enabled": true,
     "enabledExplore": true,
     "enabledCookieJar": true,
-    "customOrder": 0,
+    "customOrder": 10,
     "weight": 0,
     "bookSourceUrl": "https://yueliangxiaoshuo.com",
     "bookSourceName": "月亮小说",
@@ -39,7 +39,7 @@
     "ruleContent": {
       "content": ".novel-body@html"
     },
-    "lastUpdateTime": 1792469833823,
+    "lastUpdateTime": 1792481184694,
     "respondTime": 180000
   },
   {
