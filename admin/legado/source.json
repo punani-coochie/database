@@ -1,5 +1,50 @@
 [
   {
+    "bookSourceGroup": "@小说",
+    "bookSourceName": "月亮小说",
+    "bookSourceType": 0,
+    "bookSourceUrl": "https://yueliangxiaoshuo.com",
+    "customButton": false,
+    "customOrder": 0,
+    "enabled": true,
+    "enabledCookieJar": true,
+    "enabledExplore": true,
+    "eventListener": false,
+    "exploreUrl": "[\n  {\n    \"title\": \"排行榜\",\n    \"url\": \"/novel/ranking\",\n    \"style\": {\n      \"layout_flexGrow\": 1,\n      \"layout_flexBasisPercent\": 0.25\n    }\n  },\n  {\n    \"title\": \"最新\",\n    \"url\": \"/novel/new\",\n    \"style\": {\n      \"layout_flexGrow\": 1,\n      \"layout_flexBasisPercent\": 0.25\n    }\n  },\n  {\n    \"title\": \"系列\",\n    \"url\": \"/novel/series\",\n    \"style\": {\n      \"layout_flexGrow\": 1,\n      \"layout_flexBasisPercent\": 0.25\n    }\n  },\n  {\n    \"title\": \"发现\",\n    \"url\": \"/discovery\",\n    \"style\": {\n      \"layout_flexGrow\": 1,\n      \"layout_flexBasisPercent\": 0.25\n    }\n  }\n]",
+    "lastUpdateTime": 1792468293030,
+    "respondTime": 180000,
+    "ruleBookInfo": {
+      "author": "author",
+      "init": "@js:\nvar html = typeof result === \"string\" ? result : String(result);\ntry {\n  if (result && result.outerHtml) html = result.outerHtml();\n} catch (e) { }\n\nvar doc = org.jsoup.Jsoup.parse(html, baseUrl);\n\nconst isSeries = baseUrl.includes(\"novel/series/\")\nconst bookInfo = {\n  \"author\": \"\",\n  \"coverUrl\": \"\",\n  \"intro\": \"\",\n  \"kind\": \"\",\n  \"lastChapter\": \"\",\n  \"name\": \"\",\n  \"tocUrl\": \"\",\n  \"wordCount\": \"\",\n}\n\nif (isSeries) {\n  bookInfo.name = doc.select(\".series-view-title\").text();\n  bookInfo.author = doc.select(\".series-author-row span\").text();\n  bookInfo.intro = doc.select(\".desc-text-content\").text();\n  bookInfo.kind = doc.select(\".series-tag-group\").text();\n  bookInfo.wordCount = doc.select(\".novel-meta-group > .series-meta-stats\").eq(1).select(\"span\").eq(6).text();\n} else {\n\n}\n\nbookInfo",
+      "intro": "intro",
+      "kind": "kind",
+      "name": "name",
+      "wordCount": "wordCount"
+    },
+    "ruleContent": {
+      "content": ".novel-body@html"
+    },
+    "ruleExplore": {},
+    "ruleSearch": {
+      "author": ".novel-card-author\u0016@text",
+      "bookList": ".novel-card\u001a",
+      "bookUrl": ".novel-card-title a@href",
+      "checkKeyWord": "萝莉",
+      "kind": ".novel-card-tags a@text",
+      "lastChapter": ".novel-card-latest a@text",
+      "name": ".novel-card-title@text",
+      "wordCount": ".novel-card-stats > span.0\u0016@text"
+    },
+    "ruleToc": {
+      "chapterList": "@js:\nvar html = typeof result === \"string\" ? result : String(result);\ntry {\n  if (result && result.outerHtml) html = result.outerHtml();\n} catch (e) { }\n\nvar doc = org.jsoup.Jsoup.parse(html, baseUrl);\njava.log(baseUrl)\n\nvar isSeries = baseUrl.includes(\"novel/series/\")\nvar chapterList = []\nvar nextTocUrl = \"\";\n\nif (isSeries) {\n  var tocElements = doc.select(\".novel-card\")\n\n  for (var i = 0; i < tocElements.size(); i++) {\n    var item = tocElements.get(i);\n    chapterList.push({\n      \"chapterName\": item.select(\".novel-card-title\").text(),\n      \"chapterUrl\": item.select(\".novel-card-title a\").attr(\"href\"),\n    })\n  }\n} else {\n  chapterList = [\n    {\n      \"chapterName\": doc.select(\"h1\").text(),\n      \"chapterUrl\": baseUrl,\n    }\n  ]\n}\n\nchapterList",
+      "chapterName": "chapterName",
+      "chapterUrl": "chapterUrl",
+      "nextTocUrl": ".pagination a[rel=next]@href"
+    },
+    "searchUrl": "/search/novels?q={{key}}&p={{page}}",
+    "weight": 0
+  },
+  {
     "bookSourceType": 2,
     "enabled": true,
     "enabledExplore": true,
