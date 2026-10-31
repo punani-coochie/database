@@ -1,5 +1,44 @@
 [
   {
+    "bookSourceGroup": "@小说",
+    "bookSourceName": "小说 - 情色小说论坛",
+    "bookSourceType": 0,
+    "bookSourceUrl": "https://www.ibbs.pro/thread",
+    "bookUrlPattern": "https://www.ibbs.pro/thread/*",
+    "customButton": false,
+    "customOrder": 0,
+    "enabled": false,
+    "enabledCookieJar": true,
+    "enabledExplore": true,
+    "eventListener": false,
+    "header": "{\n    \"User-Agent\": \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.0.0 Safari/537.36\",\n    \"referer\": \"{{baseUrl}}\",\n  }",
+    "jsLib": "{\"lib\":\"https://raw.githubusercontent.com/punani-coochie/database/refs/heads/main/admin/legado/lib.js\"}",
+    "lastUpdateTime": 1793456242424,
+    "respondTime": 180000,
+    "ruleBookInfo": {
+      "intro": ".novel-catalog-summary > span@text",
+      "name": "h1@text@js:String(result).replace(/【小说】/g, '').trim()"
+    },
+    "ruleContent": {
+      "content": ".novel-chapter-content@html"
+    },
+    "ruleExplore": {},
+    "ruleSearch": {
+      "bookList": "@js:\nvar html = typeof result === \"string\" ? result : String(result);\ntry {\n  if (result && result.outerHtml) html = result.outerHtml();\n} catch (e) {}\n\nvar doc = org.jsoup.Jsoup.parse(html, baseUrl);\n\nvar bookElements = doc.select(\".cp-catalog-grid article\");\nvar bookList = [];\n\nfor (var i = 0; i < bookElements.size(); i++) {\n  var item = bookElements.get(i);\n  var href = item.select(\"h2 a\").attr(\"href\");\n\n  bookList.push({\n    name: String(item.select(\"h2\").text())\n      .replace(/^【小说】/, \"\")\n      .trim(),\n    author: \"\",\n    bookUrl: __lib.appendQueryString(href, {\n      view: \"catalog\",\n    }),\n    coverUrl: item.select(\"img\").attr(\"src\"),\n    intro: \"\",\n    kind: \"\",\n    wordCount: \"\",\n  });\n}\n\nbookList;",
+      "bookUrl": "bookUrl",
+      "coverUrl": "coverUrl",
+      "name": "name"
+    },
+    "ruleToc": {
+      "chapterList": "a.novel-catalog-row",
+      "chapterName": "strong@text@js:String(result).replace(/【小说】/g, '').trim()",
+      "chapterUrl": "@href\u0013",
+      "nextTocUrl": ".novel-catalog-pagination a[aria-label=\"下一页\"]@href"
+    },
+    "searchUrl": "https://www.ibbs.pro/search?type=novel&sort=recent&category=&q={{key}}&pagenumber={{page}}",
+    "weight": 0
+  },
+  {
     "bookSourceType": 0,
     "enabled": true,
     "enabledExplore": true,
