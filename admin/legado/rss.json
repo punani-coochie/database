@@ -1,21 +1,22 @@
 [
   {
+    "articleStyle": 1,
     "enabled": true,
     "enabledCookieJar": true,
     "sourceUrl": "https://www.ibbs.pro",
     "sourceName": "情色小说论坛·小说",
     "sourceGroup": "@小说",
-    "sortUrl": "最新小说::https://www.ibbs.pro/threadlist?type=novel\n最多浏览::https://www.ibbs.pro/threadlist?type=novel&group=MostViewed\n最多点赞::https://www.ibbs.pro/threadlist?type=novel&group=MostLiked\n视频::https://www.ibbs.pro/threadlist?type=video\n图片::https://www.ibbs.pro/threadlist?type=image",
+    "sortUrl": "最新小说::https://www.ibbs.pro/threadlist?type=novel\n最多浏览::https://www.ibbs.pro/threadlist?type=novel&group=MostViewed\n最多点赞::https://www.ibbs.pro/threadlist?type=novel&group=MostLiked",
     "header": "{\n  \"User-Agent\": \"Mozilla/5.0 (Linux; Android 13) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Mobile Safari/537.36\",\n  \"Referer\": \"https://www.ibbs.pro/\"\n}",
-    "ruleArticles": "article",
-    "ruleTitle": "h2 a@text",
-    "rulePubDate": "p span.0@text",
-    "ruleDescription": "p@text",
-    "ruleImage": "img@src||a.cp-catalog-cover img@src",
-    "ruleLink": "h2 a@href",
+    "ruleArticles": "@js:\nvar html = typeof result === \"string\" ? result : String(result);\ntry {\n  if (result && result.outerHtml) html = result.outerHtml();\n} catch (e) {}\n\nvar doc = org.jsoup.Jsoup.parse(html, baseUrl);\n\nvar bookElements = doc.select(\".cp-catalog-grid article\");\nvar bookList = [];\n\nfor (var i = 0; i < bookElements.size(); i++) {\n  var item = bookElements.get(i);\n  var href = item.select(\"h2 a\").attr(\"href\");\n\n  bookList.push({\n    name: String(item.select(\"h2\").text())\n      .replace(/^【小说】/, \"\")\n      .trim(),\n    author: \"\",\n    bookUrl: __lib.appendQueryString(href, {\n      view: \"catalog\",\n    }),\n    coverUrl: item.select(\"img\").attr(\"src\"),\n   rulePubDate: item.select(\"p span\").eq(0)@text\n  });\n}\n\nbookList;\n",
+    "ruleNextPage": "a.exo-popunder-content[aria-label=\"下一页\"]@href",
+    "ruleTitle": "name",
+    "rulePubDate": "rulePubDate",
+    "ruleImage": "coverUrl",
+    "ruleLink": "bookUrl",
     "enableJs": true,
     "loadWithBaseUrl": true,
     "ruleContent": ".novel-chapter-content@html||#chapter-content@html||article.novel-chapter@html",
-    "updateTime": 1793462189016
+    "updateTime": 1793463860080
   }
 ]
