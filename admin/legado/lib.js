@@ -7,16 +7,10 @@ var __lib = (function () {
       if (value === undefined || value === null) continue;
       if (Object.prototype.toString.call(value) === "[object Array]") {
         for (var i = 0; i < value.length; i++) {
-          pairs.push(
-            encodeURIComponent(key) +
-              "=" +
-              encodeURIComponent(String(value[i])),
-          );
+          pairs.push(encodeURIComponent(key) + "=" + encodeURIComponent(String(value[i])));
         }
       } else {
-        pairs.push(
-          encodeURIComponent(key) + "=" + encodeURIComponent(String(value)),
-        );
+        pairs.push(encodeURIComponent(key) + "=" + encodeURIComponent(String(value)));
       }
     }
     return pairs.length ? "?" + pairs.join("&") : "";
