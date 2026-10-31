@@ -6,14 +6,15 @@
     "bookSourceUrl": "https://www.ibbs.pro/thread",
     "bookUrlPattern": "https://www.ibbs.pro/thread/*",
     "customButton": false,
-    "customOrder": 0,
+    "customOrder": 1,
     "enabled": false,
     "enabledCookieJar": true,
     "enabledExplore": true,
     "eventListener": false,
+    "exploreUrl": "[\n  {\n    \"title\": \"最新\",\n    \"url\": \"/threadlist?type=novel&group=RecentThread&category=\",\n    \"style\": {\n      \"layout_flexGrow\": 1,\n      \"layout_flexBasisPercent\": 0.33\n    }\n  },\n  {\n    \"title\": \"最多浏览\",\n    \"url\": \"/threadlist?type=novel&group=PopularThread&category=\",\n    \"style\": {\n      \"layout_flexGrow\": 1,\n      \"layout_flexBasisPercent\": 0.33\n    }\n  },\n  {\n    \"title\": \"最多点赞\",\n    \"url\": \"/threadlist?type=novel&group=HotThread&category=\",\n    \"style\": {\n      \"layout_flexGrow\": 1,\n      \"layout_flexBasisPercent\": 0.33\n    }\n  },\n  {\n    \"title\": \"诱骗\",\n    \"url\": \"/threadlist?type=novel&group=RecentThread&category=5fb8bbbc068a27793bc9ffa6\",\n    \"style\": {\n      \"layout_flexGrow\": 1,\n      \"layout_flexBasisPercent\": 0.25\n    }\n  },\n  {\n    \"title\": \"改编\",\n    \"url\": \"/threadlist?type=novel&group=RecentThread&category=5fb8bbe9068a27793bc9ffa8\",\n    \"style\": {\n      \"layout_flexGrow\": 1,\n      \"layout_flexBasisPercent\": 0.25\n    }\n  },\n  {\n    \"title\": \"变身\",\n    \"url\": \"/threadlist?type=novel&group=RecentThread&category=5fb8bc01068a27793bc9ffa9\",\n    \"style\": {\n      \"layout_flexGrow\": 1,\n      \"layout_flexBasisPercent\": 0.25\n    }\n  },\n  {\n    \"title\": \"乱伦\",\n    \"url\": \"/threadlist?type=novel&group=RecentThread&category=5fb90c57b0e6db1417e9db56\",\n    \"style\": {\n      \"layout_flexGrow\": 1,\n      \"layout_flexBasisPercent\": 0.25\n    }\n  },\n  {\n    \"title\": \"古典\",\n    \"url\": \"/threadlist?type=novel&group=RecentThread&category=6035c3db28af0c745c8dacf7\",\n    \"style\": {\n      \"layout_flexGrow\": 1,\n      \"layout_flexBasisPercent\": 0.25\n    }\n  },\n  {\n    \"title\": \"武侠\",\n    \"url\": \"/threadlist?type=novel&group=RecentThread&category=6039a27f14b96af9203a37be\",\n    \"style\": {\n      \"layout_flexGrow\": 1,\n      \"layout_flexBasisPercent\": 0.25\n    }\n  },\n  {\n    \"title\": \"玄幻\",\n    \"url\": \"/threadlist?type=novel&group=RecentThread&category=603a6b8bd7ae819370238344\",\n    \"style\": {\n      \"layout_flexGrow\": 1,\n      \"layout_flexBasisPercent\": 0.25\n    }\n  }\n]\n",
     "header": "{\n    \"User-Agent\": \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.0.0 Safari/537.36\",\n    \"referer\": \"{{baseUrl}}\",\n  }",
     "jsLib": "{\"lib\":\"https://raw.githubusercontent.com/punani-coochie/database/refs/heads/main/admin/legado/lib.js\"}",
-    "lastUpdateTime": 1793456242424,
+    "lastUpdateTime": 1793462081291,
     "respondTime": 180000,
     "ruleBookInfo": {
       "intro": ".novel-catalog-summary > span@text",
@@ -24,7 +25,7 @@
     },
     "ruleExplore": {},
     "ruleSearch": {
-      "bookList": "@js:\nvar html = typeof result === \"string\" ? result : String(result);\ntry {\n  if (result && result.outerHtml) html = result.outerHtml();\n} catch (e) {}\n\nvar doc = org.jsoup.Jsoup.parse(html, baseUrl);\n\nvar bookElements = doc.select(\".cp-catalog-grid article\");\nvar bookList = [];\n\nfor (var i = 0; i < bookElements.size(); i++) {\n  var item = bookElements.get(i);\n  var href = item.select(\"h2 a\").attr(\"href\");\n\n  bookList.push({\n    name: String(item.select(\"h2\").text())\n      .replace(/^【小说】/, \"\")\n      .trim(),\n    author: \"\",\n    bookUrl: __lib.appendQueryString(href, {\n      view: \"catalog\",\n    }),\n    coverUrl: item.select(\"img\").attr(\"src\"),\n    intro: \"\",\n    kind: \"\",\n    wordCount: \"\",\n  });\n}\n\nbookList;",
+      "bookList": "@js:\nvar html = typeof result === \"string\" ? result : String(result);\ntry {\n  if (result && result.outerHtml) html = result.outerHtml();\n} catch (e) {}\n\nvar doc = org.jsoup.Jsoup.parse(html, baseUrl);\n\nvar bookElements = doc.select(\".cp-catalog-grid article\");\nvar bookList = [];\n\nfor (var i = 0; i < bookElements.size(); i++) {\n  var item = bookElements.get(i);\n  var href = item.select(\"h2 a\").attr(\"href\");\n\n  bookList.push({\n    name: String(item.select(\"h2\").text())\n      .replace(/^【小说】/, \"\")\n      .trim(),\n    author: \"\",\n    bookUrl: __lib.appendQueryString(href, {\n      view: \"catalog\",\n    }),\n    coverUrl: item.select(\"img\").attr(\"src\"),\n    intro: \"\",\n    kind: \"\",\n    wordCount: \"\",\n  });\n}\n\nbookList;\n",
       "bookUrl": "bookUrl",
       "coverUrl": "coverUrl",
       "name": "name"
