@@ -1,1 +1,21 @@
-[]
+[
+  {
+    "enabled": true,
+    "enabledCookieJar": true,
+    "sourceUrl": "https://www.ibbs.pro",
+    "sourceName": "情色小说论坛·小说",
+    "sourceGroup": "@小说",
+    "sortUrl": "最新小说::https://www.ibbs.pro/threadlist?type=novel\n最多浏览::https://www.ibbs.pro/threadlist?type=novel&group=MostViewed\n最多点赞::https://www.ibbs.pro/threadlist?type=novel&group=MostLiked\n视频::https://www.ibbs.pro/threadlist?type=video\n图片::https://www.ibbs.pro/threadlist?type=image",
+    "header": "{\n  \"User-Agent\": \"Mozilla/5.0 (Linux; Android 13) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Mobile Safari/537.36\",\n  \"Referer\": \"https://www.ibbs.pro/\"\n}",
+    "ruleArticles": "article",
+    "ruleTitle": "h2 a@text",
+    "rulePubDate": "p span.0@text",
+    "ruleDescription": "p@text",
+    "ruleImage": "img@src||a.cp-catalog-cover img@src",
+    "ruleLink": "h2 a@href",
+    "enableJs": true,
+    "loadWithBaseUrl": true,
+    "ruleContent": ".novel-chapter-content@html||#chapter-content@html||article.novel-chapter@html",
+    "updateTime": 1793462189016
+  }
+]
